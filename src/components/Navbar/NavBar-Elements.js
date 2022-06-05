@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
     width: 100%;
     height: 70px;
-    background-color: #00000052;
+    background-color: black;
     `;
 export const Wrapper = styled.div`
     width: 100%;
@@ -45,7 +45,7 @@ export const Menu = styled.ul`
     list-style: none;
 
     @media screen and (max-width: 960px){
-        background-color: #000000be;
+        background-color: black;
         position: absolute;
         top: 70px;
         left: ${({open}) => (open ? "0" : "+100%")}; // Muy importante
@@ -55,6 +55,8 @@ export const Menu = styled.ul`
         flex-direction: column;
         align-items: center;
         transition: 0.5s all ease;
+        z-index: 1;
+        text-align: center;
     }
     
 `; 

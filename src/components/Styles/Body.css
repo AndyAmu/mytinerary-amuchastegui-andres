@@ -1,4 +1,4 @@
-body {
+.imagenprincipal {
     background-image: url(../images/playa.jpg);
     background-repeat: no-repeat;
     background-size:cover;
@@ -6,7 +6,12 @@ body {
     z-index: 1;
     background-blend-mode: darken;
 }
-
+.Body-img{
+    height: 95vh;
+}
+.Body-img2{
+    height: 95vh;
+}
 .titulo-centro {
     color: white;
     font-size: 4rem;
@@ -15,7 +20,17 @@ body {
     transform: translateY(10rem);
     
 }
+@media (min-width:960px){
+    .titulo-centro {
+        z-index: 1;
+    }
+}
 
-.Body-img{
+.imagenDos {
     background-image: url(../images/img-home.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-color: #00000052;
+    z-index: 1;
+    background-blend-mode: darken;
 }

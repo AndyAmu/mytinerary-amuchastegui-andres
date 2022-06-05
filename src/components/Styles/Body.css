@@ -1,0 +1,21 @@
+body {
+    background-image: url(../images/playa.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-color: #00000052;
+    z-index: 1;
+    background-blend-mode: darken;
+}
+
+.titulo-centro {
+    color: white;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    transform: translateY(10rem);
+    
+}
+
+.Body-img{
+    background-image: url(../images/img-home.jpg);
+}

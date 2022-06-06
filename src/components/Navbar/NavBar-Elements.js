@@ -1,11 +1,14 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+    z-index: 1;
+    position: fixed;
     width: 100%;
     height: 70px;
     background-color: black;
     `;
 export const Wrapper = styled.div`
+    margin-left: 2rem;
     width: 100%;
     max-width: 1300px;
     height: 100%;
@@ -50,13 +53,14 @@ export const Menu = styled.ul`
         top: 70px;
         left: ${({open}) => (open ? "0" : "+100%")}; // Muy importante
         width: 100%;
-        height: 90vh;
+        height: 100vh;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         align-items: center;
         transition: 0.5s all ease;
         z-index: 1;
-        text-align: center;
+        
     }
     
 `; 

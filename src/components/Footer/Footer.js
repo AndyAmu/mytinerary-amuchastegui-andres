@@ -4,7 +4,7 @@ import '../Styles/Footer.css'
 const Footer = ()  => {
     return (
         <div>
-            <footer className='footer text-white py-4 bg-dark '>
+            <footer className='footer text-white py-4 '>
                 <div className='container'>
                     <p>Derechos reservados MyTinerary® 2022</p>
                 </div>

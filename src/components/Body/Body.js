@@ -1,5 +1,6 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+
 const Body = () => {
     return (
         <main className='mainPrincipal'>
@@ -9,7 +10,7 @@ const Body = () => {
                     <h1 className='titulo-centro'>My Tinerary</h1>
                     <h4 className='texto-body'>Find your perfect trip, designed by insiders who know and love their cities!</h4>
                     <div className='boton-llamativo'>
-                        
+                    <Button className='boton-lindo' variant="warning">Click Here !</Button>{' '}
                     </div>
                 </div>
             </div>

@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.navegador {
+    font-family: 'Righteous', cursive;
+}
 .imagenprincipal {
     background-image: url(../images/playa.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #0000002f;
-    z-index: 1;
+    
     background-blend-mode: darken;
 }
 
@@ -11,15 +16,24 @@
     height: 100vh;
 }
 
-
-
 .titulo-centro {
     color: white;
     font-size: 4rem;
     display: flex;
     justify-content: center;
     transform: translateY(10rem);
-
+    -webkit-text-stroke: 1px #000000;
+}
+.titulo-centro2 {
+    color: rgb(0, 0, 0);
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    transform: translateY(10rem);
+    -webkit-text-stroke: .5px #ffc107;
+}
+.Tinerary {
+    color: #ffc107;
 }
 
 @media (min-width:960px) {

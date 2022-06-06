@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
     margin: auto`;;
 
 export const LogoContainer = styled.div`
-    
+    color: white;
     display: flex;
     align-items: center;
     font-size: 1.3rem;
@@ -32,11 +32,11 @@ export const LogoContainer = styled.div`
         &:nth-child(3){
             font-size: 1.5rem;
             font-weight: 500;
-            color: #e07924;
+            color: #ffc107;
     }
 }
     svg{
-        fill: #e07924;
+        fill: #ffc107;
         margin-right: 1rem;
     }
 `;
@@ -83,7 +83,7 @@ export const MenuItemLink = styled.a`
     align-items:center;
     height: 100%;
     padding: 0.5rem 2.5rem;
-    color: #e0792a;
+    color: #ffc107;
     font-family: sans-serif;
     font-size: 1rem;
     font-weight: 300;
@@ -92,7 +92,7 @@ export const MenuItemLink = styled.a`
 
     &:hover{
         color: #fff;
-        background-color: #e0792a;
+        background-color: #ffc107;
         transition: 0.5s all ease;
 
         div {
@@ -116,7 +116,7 @@ export const MobileIcon = styled.div`
         cursor: pointer;
 
     svg{
-        fill: #e07924;
+        fill: #ffc107;
         margin-right: 1rem;
         }
     }

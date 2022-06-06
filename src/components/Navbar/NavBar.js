@@ -12,7 +12,7 @@ const NavBar = () => {
                     <LogoContainer>
                         <FaAvianex />
                         <p>My</p>
-                        <p>Tinerary</p>                        
+                        <p className='TineraryBody'>Tinerary</p>                        
                     </LogoContainer>
 
                     <MobileIcon onClick = {() => setMobileMenu(!showMobileMenu)}>
@@ -21,12 +21,12 @@ const NavBar = () => {
 
                     <Menu open= {showMobileMenu}>
                         <MenuItem>
-                            <MenuItemLink onClick = {() => setMobileMenu(!showMobileMenu)}>
+                            <MenuItemLink className='navegador' onClick = {() => setMobileMenu(!showMobileMenu)}>
                                 Home
                             </MenuItemLink>
                         </MenuItem>
                         <MenuItem>
-                            <MenuItemLink onClick = {() => setMobileMenu(!showMobileMenu)}>
+                            <MenuItemLink className='navegador' onClick = {() => setMobileMenu(!showMobileMenu)}>
                                 Cities
                             </MenuItemLink>
                         </MenuItem>

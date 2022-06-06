@@ -18,10 +18,10 @@ export const Wrapper = styled.div`
     margin: auto`;;
 
 export const LogoContainer = styled.div`
-    margin-left: 0.5rem;
+    
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-family: sans-serif;
 
     p {
@@ -65,7 +65,7 @@ export const Menu = styled.ul`
     
 `; 
 
-export const MenuItem = styled.ul`
+export const MenuItem = styled.li`
     height: 100%;
     
     @media screen and (max-width: 960px) {
@@ -83,7 +83,7 @@ export const MenuItemLink = styled.a`
     align-items:center;
     height: 100%;
     padding: 0.5rem 2.5rem;
-    color: #64b2ff;
+    color: #e0792a;
     font-family: sans-serif;
     font-size: 1rem;
     font-weight: 300;

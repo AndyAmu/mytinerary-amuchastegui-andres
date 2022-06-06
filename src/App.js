@@ -9,7 +9,6 @@ function App() {
     <NavBar />
     <Body />
     <Footer />
-    
     </>
   );
 }

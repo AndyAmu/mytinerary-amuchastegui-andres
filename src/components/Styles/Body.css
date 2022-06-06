@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 .navegador {
-    font-family: 'Righteous', cursive;
+    font-family: 'Righteous', cursive !important;
+}
+
+.logo-principal {
+    width: 8rem;
+    height: 3rem;
+    margin-top: 10rem;
+    transform: translateX(5rem);
+    position: absolute;
 }
 .imagenprincipal {
     background-image: url(../images/playa.jpg);
@@ -86,3 +94,7 @@
     height: 4rem;
 }
 
+.boton-lindo:hover {
+    background-color: white;
+    color: black;
+}

@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer"
 import "./components/Styles/Body.css"
 import "./components/Styles/Carousel.css"
 import Carousel from './components/Body/Carousel'
+import cities from './components/datos'
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
     <>
     <NavBar />
     <Body />
-    <Carousel />
+    <Carousel datos={cities} />
     <Footer />
     </>
   );

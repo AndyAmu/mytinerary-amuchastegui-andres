@@ -11,6 +11,7 @@ const Body = () => {
                     <h4 className='texto-body'>Find your perfect trip, designed by insiders who know and love their cities!</h4>
                     <div className='boton-llamativo'>
                         <Button onClick={() => { }} className='boton-lindo' variant="warning">Click Here !</Button>{' '}
+                        
                     </div>
                 </div>
             </div>

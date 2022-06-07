@@ -1,22 +1,23 @@
 import React from 'react'
 import NavBar from "./components/Navbar/NavBar"
-import Body from "./components/Body/Body"
 import Footer from "./components/Footer/Footer"
 import "./components/Styles/Body.css"
 import "./components/Styles/Carousel.css"
-import Carousel from './components/Body/Carousel'
-import cities from './components/datos'
-
+import "./components/Styles/Cities.css"
+import Pagehome from './components/pages/Pagehome'
+import { Routes, Route } from 'react-router-dom'
+import { Cities } from './components/pages/Cities'
 
 
 
 function App() {
   return (
     <>
-    <NavBar />
-    
-    <Body />
-    <Carousel datos={cities} />
+    <NavBar />  
+    <Routes>
+      <Route path="/" element={<Pagehome />} />
+      <Route path="/cities" element={<Cities />} />
+    </Routes>
     
     <Footer />
     </>

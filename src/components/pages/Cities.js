@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Cities = () => {
     return (
-        <div>Cities</div>
+        <div className='cities'>Cities</div>
     )
 }

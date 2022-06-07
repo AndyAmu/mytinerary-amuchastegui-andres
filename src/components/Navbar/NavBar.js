@@ -1,3 +1,5 @@
+import {Link as LinkRouter} from "react-router-dom"
+
 import React, {useState} from 'react'
 import { Container, LogoContainer, Menu, MenuItem, MenuItemLink, MobileIcon, Wrapper } from './NavBar-Elements'
 import { FaAvianex, FaAlignJustify, FaUserCircle } from "react-icons/fa";
@@ -22,12 +24,12 @@ const NavBar = () => {
                     <Menu open= {showMobileMenu}>
                         <MenuItem>
                             <MenuItemLink className='navegador' onClick = {() => setMobileMenu(!showMobileMenu)}>
-                                Home
+                            <LinkRouter to='/'>Home</LinkRouter>
                             </MenuItemLink>
                         </MenuItem>
                         <MenuItem>
                             <MenuItemLink className='navegador' onClick = {() => setMobileMenu(!showMobileMenu)}>
-                                Cities
+                            <LinkRouter to='/Cities'>Cities</LinkRouter>
                             </MenuItemLink>
                         </MenuItem>
                         <MenuItem>

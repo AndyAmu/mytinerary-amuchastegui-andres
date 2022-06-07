@@ -1,7 +1,6 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 
-
 const Body = () => {
 
     return (
@@ -16,12 +15,7 @@ const Body = () => {
                 </div>
             </div>
 
-            <div className='imagenDos'>
-
-                <div className='Body-img2'></div>
-
-
-            </div>
+            
         </main>
     )
 }

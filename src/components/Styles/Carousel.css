@@ -1,0 +1,8 @@
+.foto-dos {
+    background-image: url(../images/img-home.jpg) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-color: #0000002f !important;
+    background-blend-mode: darken !important;
+    height: 100vh !important;
+}

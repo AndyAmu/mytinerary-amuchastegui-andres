@@ -11,11 +11,44 @@
 }
 
 .img-carousel {
+    background-color: #0000002f !important;
+    background-blend-mode: darken !important;
     width: 100%;
-    height: 25rem;
-    border-radius: 2rem;
+    height: 18rem;
+    border-radius: 1rem;
+    
+}
+.contenedor-corousel{
+    width: 82rem;
+    
+}
+@media (max-width: 850px) {
+    .contenedor-corousel{
+        width: 40rem;
+    }
+}
+@media (max-width: 620px) {
+    .contenedor-corousel{
+        width: 30rem;
+    }
+}
+@media (max-width: 460px) {
+    .contenedor-corousel{
+        width: 20rem;
+    }
+}
+@media (max-width: 460px) {
+    .img-carousel{
+        width: 100%;
+        height: 10rem;
+    }
 }
 
-.contenedor-corousel{
-    width: 90rem;
+
+
+.texto-carousel {
+    border-radius: 2rem;
+    background-color: rgba(0, 0, 0, 0.514);
+    text-align: center;
+    color: white;
 }

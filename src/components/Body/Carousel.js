@@ -6,14 +6,22 @@ const Gallery = (props) => {
     return (
         <div className='foto-dos'>
             <div className='contenedor-corousel'>
-        <Carousel className='carousel' cols={2} rows={2} gap={10} loop>
-            {props.datos && props.datos.map(item => 
-            <Carousel.Item>
-                <img className='img-carousel' src={item.imagen} />
-            </Carousel.Item>
-            )}
-        </Carousel>
-        </div>
+
+                <Carousel autoplay={4000} className='carousel' cols={2} rows={2} gap={10} loop mobileBreakpoint={300}>
+
+                    {props.datos && props.datos.map((item, index) =>
+                        <Carousel.Item key={index}>
+                            <div className='texto-carousel'>
+                                <img className='img-carousel' src={item.imagen} alt='img' />
+
+                                <h2><b>{item.ciudad}</b></h2>
+                                <h4>{item.pais}</h4>
+                            </div>
+
+                        </Carousel.Item>
+                    )}
+                </Carousel>
+            </div>
         </div>
     )
 }

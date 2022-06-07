@@ -8,12 +8,16 @@ import Carousel from './components/Body/Carousel'
 import cities from './components/datos'
 
 
+
+
 function App() {
   return (
     <>
     <NavBar />
+    
     <Body />
     <Carousel datos={cities} />
+    
     <Footer />
     </>
   );

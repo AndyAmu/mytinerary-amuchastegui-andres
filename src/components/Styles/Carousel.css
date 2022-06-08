@@ -52,3 +52,9 @@
     text-align: center;
     color: white;
 }
+
+.contenedor-corousel [type="next"],
+.contenedor-corousel [type="prev"] {
+    z-index: 1;
+}
+

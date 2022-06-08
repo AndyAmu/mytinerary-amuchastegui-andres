@@ -24,18 +24,18 @@ const NavBar = () => {
                     <Menu open= {showMobileMenu}>
                         <MenuItem>
                             <MenuItemLink className='navegador' onClick = {() => setMobileMenu(!showMobileMenu)}>
-                            <LinkRouter to='/'>Home</LinkRouter>
+                            <LinkRouter className='LinkRouter'  to='/'>Home</LinkRouter>
                             </MenuItemLink>
                         </MenuItem>
                         <MenuItem>
                             <MenuItemLink className='navegador' onClick = {() => setMobileMenu(!showMobileMenu)}>
-                            <LinkRouter to='/Cities'>Cities</LinkRouter>
+                            <LinkRouter className='LinkRouter'  to='/Cities'>Cities</LinkRouter>
                             </MenuItemLink>
                         </MenuItem>
                         <MenuItem>
                             <MenuItemLink onClick = {() => setMobileMenu(!showMobileMenu)}>
                             <div>
-                                <FaUserCircle />
+                            <LinkRouter className='LinkRouter'  to='/Login'><FaUserCircle /></LinkRouter>
                             </div>
                                 
                             </MenuItemLink>

@@ -52,6 +52,11 @@
         z-index: 1;
     }
 }
+@media (max-width:350px) {
+    .titulo-centro {
+        font-size: 3.4rem;
+    }
+}
 
 .texto-body {
     color: white;
@@ -130,6 +135,12 @@
 @media (min-height: 672px) {
     .button-85 {
         transform: translateY(0rem);
+    }
+}
+@media (min-height: 500px) {
+    .button-85 {
+        width: 19rem;
+    height: 5rem;
     }
 }
 

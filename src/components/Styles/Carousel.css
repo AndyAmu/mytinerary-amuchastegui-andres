@@ -1,8 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Ramabhadra&family=Righteous&display=swap');
 
+.Popular {
+    font-size: 5rem;
+    text-align: center;
+    color: white;
+    font-family: 'Ramabhadra', sans-serif;
+    font-family: 'Righteous', cursive;
+    -webkit-text-stroke: .4px black;
+}
+@media (max-width: 870px) {
+    .Popular {
+        font-size: 4rem;
+    }
+}
+@media (max-width: 425px) {
+    .Popular {
+        font-size: 3rem;
+    }
+}
 .name-img-carusel {
     font-family: 'Ramabhadra', sans-serif;
 font-family: 'Righteous', cursive;
+
 }
 
 .foto-dos {
@@ -59,6 +78,7 @@ font-family: 'Righteous', cursive;
         height: 10rem;
     }
 }
+
 
 
 

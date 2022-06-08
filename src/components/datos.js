@@ -9,7 +9,7 @@ const cities = [
     {id: "8", pais: "France", ciudad: "Paris", imagen: "https://images.pexels.com/photos/532826/pexels-photo-532826.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
     {id: "9", pais: "Brazil", ciudad: "Rio de Janeiro", imagen: "https://newses.cgtn.com/n/BfJEA-cA-GIA/BIbfHcA.jpg"},
     {id: "10", pais: "Italy", ciudad: "Roma", imagen: "https://www.viajaraitalia.com/wp-content/uploads/2011/05/Colosseum_in_Rome_Italy.jpg"},
-    {id: "11", pais: "Chile", ciudad: "Santiago de Chile", imagen: "https://i.pinimg.com/originals/39/d1/bc/39d1bc140bb92cebbaf5c08b6b5ac7c8.jpg"},
+    {id: "11", pais: "Peru", ciudad: "Lima", imagen: "https://static.onecms.io/wp-content/uploads/sites/28/2021/07/27/lima-peru-LIMATG0721.jpg"},
     {id: "12", pais: "Japan", ciudad: "Tokio", imagen: "https://img.besthqwallpapers.com/Uploads/13-10-2017/23947/tokyo-illumination-street-4k-skyscrapers.jpg"},
 
 ]

@@ -9,10 +9,12 @@ const Body = () => {
             <div className='imagenprincipal'>
                 <div className='Body-img'>
                     <h1 className='titulo-centro'>My<b className='Tinerary'>Tinerary</b> </h1>
-                    <h4 className='texto-body'>Find your perfect trip, designed by insiders who know and love their cities!</h4>
+                    <h4 className='texto-body'>"Find your perfect trip, designed by insiders who know and love their cities!"</h4>
                     <div className='boton-llamativo'>
-                        <LinkRouter className='LinkRouter'  to='/Cities'>
-                        <Button onClick={() => { }} className='boton-lindo' variant="warning">Click Here !</Button>{' '}
+                        <LinkRouter style={{linkStyle: "none"}} className='LinkRouter'  to='/Cities'>
+                        
+                        <Button onClick={() => { }} className='button-85' variant="warning"><b>Click Here!</b></Button>
+                        
                         </LinkRouter>
                         
                     </div>

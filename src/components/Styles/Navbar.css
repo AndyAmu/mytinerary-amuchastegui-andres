@@ -38,7 +38,7 @@
     align-items:center;
     height: 100%;
     padding: 0.5rem 2.5rem;
-    
+    color: #ffc107;
     font-family: sans-serif;
     font-size: 1rem;
     font-weight: 300;
@@ -48,11 +48,21 @@
 
 .MenuItemLink:hover {
     color: #fff;
-        background-color: #e0792a;
+        background-color: #ffc107;
         transition: 0.5s all ease;
 }
 
-.LinkRouter {
-    color: #ffc107;
-    background-color: #23394d;
+.menu {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+@media (max-width: 960px) {
+    .menu {
+        background-color: black;
+        position: absolute;
+        top: 70px;
+    }
 }

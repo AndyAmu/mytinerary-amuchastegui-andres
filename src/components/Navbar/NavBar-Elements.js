@@ -51,7 +51,7 @@ export const Menu = styled.ul`
         background-color: black;
         position: absolute;
         top: 70px;
-        left: ${({open}) => (open ? "0" : "+100%")}; // Muy importante
+        right: ${({open}) => (open ? "0" : "-100%")}; // Muy importante
         width: 100%;
         height: 100vh;
         justify-content: center;

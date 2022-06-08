@@ -12,9 +12,9 @@ const Gallery = (props) => {
                     {props.datos && props.datos.map((item, index) =>
                         <Carousel.Item key={index}>
                             <div className='texto-carousel'>
-                                <img className='img-carousel' src={item.imagen} alt='img' />
+                                <img className='img-carousel' src={item.imagen} alt={item.ciudad} />
 
-                                <h2><b>{item.ciudad}</b></h2>
+                                <h2 className='name-img-carusel'><b>{item.ciudad}</b></h2>
                                 <h4>{item.pais}</h4>
                             </div>
 

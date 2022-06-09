@@ -26,18 +26,18 @@ const NavBar = () => {
                     <Menu className="menu" open= {showMobileMenu}>
                         <MenuItem>
                         <div className="MenuItemLink">
-                        <LinkRouter style={{color:"white"}} className='LinkRouter'  to='/'>Home</LinkRouter>
+                        <LinkRouter onClick = {() => setMobileMenu(!showMobileMenu)} style={{color:"white"}} className='LinkRouter'  to='/'>Home</LinkRouter>
                         </div>
                             
                         </MenuItem>
                         <MenuItem>
                         <div className="MenuItemLink">
-                            <LinkRouter style={{color:"white"}} className='LinkRouter'  to='/Cities'>Cities</LinkRouter>
+                            <LinkRouter onClick = {() => setMobileMenu(!showMobileMenu)} style={{color:"white"}} className='LinkRouter'  to='/Cities'>Cities</LinkRouter>
                         </div>
                         </MenuItem>
                         <MenuItem>
                             <div className="MenuItemLink">
-                            <LinkRouter style={{color:"white"}} className='LinkRouter'  to='/Login'><FaUserCircle /></LinkRouter>
+                            <LinkRouter onClick = {() => setMobileMenu(!showMobileMenu)} style={{color:"white"}} className='LinkRouter'  to='/Login'><FaUserCircle /></LinkRouter>
                             </div>
                             
                         </MenuItem>

@@ -35,6 +35,11 @@ font-family: 'Righteous', cursive;
     justify-content: center;
     align-items: center;
 }
+.img-carousel:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 255, 0.5);
+    transition: 1s;
+}
 
 .img-carousel {
     background-color: #0000002f !important;
@@ -46,11 +51,6 @@ font-family: 'Righteous', cursive;
     
 }
 
-.img-carousel:hover {
-    opacity: 1;
-    background-color: rgba(0, 0, 255, 0.5);
-    transition: 1s;
-}
 
 .contenedor-corousel{
     transition: width 2s;

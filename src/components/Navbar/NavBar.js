@@ -12,7 +12,9 @@ const NavBar = () => {
                 <Wrapper>
                     <IconContext.Provider value={{ style: {fontSize: "2em" }}}>
                     <LogoContainer>
+                        <LinkRouter  to='/'>
                         <FaAvianex />
+                        </LinkRouter>
                         <p>My</p>
                         <p className='TineraryBody'>Tinerary</p>                        
                     </LogoContainer>

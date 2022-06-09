@@ -1,4 +1,10 @@
 .login {
     height: 90.6vh;
-    background-image: url(https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/07/31141652/vacaciones-1920-1.jpg);
+    background-image: url(https://c.wallhere.com/photos/d9/f2/airplane_airport_chair_passenger_aircraft_window_sunlight_reflection_depth_of_field-173882.jpg!d);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.web-en-mantenimiento {
+    color: black;
 }

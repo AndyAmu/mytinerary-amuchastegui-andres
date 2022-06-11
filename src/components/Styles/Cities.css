@@ -1,4 +1,4 @@
 .cities{
-    height: 90.6vh;
+    min-height: 100vh;
     background-image: url(../images/img-home.jpg);
 }

@@ -7,7 +7,7 @@ const cities = [
     {id: "6", pais: "Russia", ciudad: "Moscu", imagen: "https://cdni.russiatoday.com/rbthmedia/images/web/es-rbth/images/2016-07/top/plaza_roja_g1exdk_1300.jpg",},
     {id: "7", pais: "USA", ciudad: "New York", imagen: "https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg?cs=srgb&dl=pexels-vlad-alexandru-popa-1486222.jpg&fm=jpg"},
     {id: "8", pais: "France", ciudad: "Paris", imagen: "https://images.pexels.com/photos/532826/pexels-photo-532826.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
-    {id: "9", pais: "Brazil", ciudad: "Rio de Janeiro", imagen: "https://newses.cgtn.com/n/BfJEA-cA-GIA/BIbfHcA.jpg"},
+    {id: "9", pais: "Brazil", ciudad: "Amazonas", imagen: "https://www.miviaje.info/wp-content/uploads/2019/03/rio-amazonas-cruceros.jpg"},
     {id: "10", pais: "Italy", ciudad: "Roma", imagen: "https://www.viajaraitalia.com/wp-content/uploads/2011/05/Colosseum_in_Rome_Italy.jpg"},
     {id: "11", pais: "Peru", ciudad: "Lima", imagen: "https://static.onecms.io/wp-content/uploads/sites/28/2021/07/27/lima-peru-LIMATG0721.jpg"},
     {id: "12", pais: "Japan", ciudad: "Tokio", imagen: "https://img.besthqwallpapers.com/Uploads/13-10-2017/23947/tokyo-illumination-street-4k-skyscrapers.jpg"},

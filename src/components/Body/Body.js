@@ -7,7 +7,7 @@ const Body = () => {
     return (
         <main className='mainPrincipal'>
             <div className='imagenprincipal'>
-                <div className='Body-img'>+
+                <div className='Body-img'>ㅤ
                 <div className='contenedor-textos-body'>
                     <h1 className='titulo-centro'>My<b className='Tinerary'>Tinerary</b> </h1>
                     <h4 className='texto-body'>"Find your perfect trip, designed by insiders who know and love their cities!"</h4>

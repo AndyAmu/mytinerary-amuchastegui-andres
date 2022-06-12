@@ -16,7 +16,6 @@ main {
 
 .imagenprincipal {
     background-image: url(../images/playa.jpg);
-    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #0000002f;

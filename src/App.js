@@ -7,9 +7,11 @@ import "./components/Styles/Cities.css"
 import "./components/Styles/Login.css"
 import Pagehome from './components/pages/Pagehome'
 import { Routes, Route } from 'react-router-dom'
-import { Cities } from './components/pages/Cities'
+import  Cities  from './components/pages/Cities'
 import { Login } from './components/pages/Login'
-
+import ActionAreaCard from './components/Details'
+import ScrollToTop from "react-scroll-to-top";
+import FileUploadIcon from '@mui/icons-material/FileUpload';
 
 
 function App() {
@@ -20,9 +22,15 @@ function App() {
       <Route path="/" element={<Pagehome />} />
       <Route path="/cities" element={<Cities />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/details/:id" element={<ActionAreaCard />} />
     </Routes>
     
     <Footer />
+    <ScrollToTop
+                style={{backgroundColor: 'white', opacity:'70%', width:'50px', height:'50px'}}                
+                smooth
+                viewBox="0 0 24 24"
+                component={<FileUploadIcon />} />
     </>
   );
 }

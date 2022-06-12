@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     z-index: 10;
-    position: fixed;
+    position: static;
     width: 100%;
-    height: 70px;
+    height: 10vh;
     background-color: black;
     `;
 export const Wrapper = styled.div`

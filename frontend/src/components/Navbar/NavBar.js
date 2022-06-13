@@ -1,6 +1,6 @@
 import {Link as LinkRouter} from "react-router-dom"
 import React, {useState} from 'react'
-import { Container, LogoContainer, Menu, MenuItem, MobileIcon, Wrapper } from './NavBar-Elements'
+import { Container, LogoContainer, Menu, MenuItem, MenuItemLink, MobileIcon, Wrapper } from './NavBar-Elements'
 import { FaAvianex, FaAlignJustify, FaUserCircle } from "react-icons/fa";
 import { IconContext } from 'react-icons'; // Estilos globales
 import '../Styles/Navbar.css'
@@ -16,29 +16,29 @@ const NavBar = () => {
                         <FaAvianex />
                         </LinkRouter>
                         <p>My</p>
-                        <p className='TineraryBody'>Tinerary</p>                        
+                        <p>Tinerary</p>                        
                     </LogoContainer>
 
                     <MobileIcon onClick = {() => setMobileMenu(!showMobileMenu)}>
                         <FaAlignJustify />
                     </MobileIcon>
 
-                    <Menu className="menu" open= {showMobileMenu}>
+                    <Menu open= {showMobileMenu}>
                         <MenuItem>
-                        <div className="MenuItemLink">
+                        <MenuItemLink>
                         <LinkRouter onClick = {() => setMobileMenu(!showMobileMenu)} style={{color:"white"}} className='LinkRouter'  to='/'>Home</LinkRouter>
-                        </div>
+                        </MenuItemLink>
                             
                         </MenuItem>
                         <MenuItem>
-                        <div className="MenuItemLink">
+                        <MenuItemLink>
                             <LinkRouter onClick = {() => setMobileMenu(!showMobileMenu)} style={{color:"white"}} className='LinkRouter'  to='/Cities'>Cities</LinkRouter>
-                        </div>
+                            </MenuItemLink>
                         </MenuItem>
                         <MenuItem>
-                            <div className="MenuItemLink">
+                            <MenuItemLink>
                             <LinkRouter onClick = {() => setMobileMenu(!showMobileMenu)} style={{color:"white"}} className='LinkRouter'  to='/Login'><FaUserCircle /></LinkRouter>
-                            </div>
+                            </MenuItemLink>
                             
                         </MenuItem>
                     </Menu>

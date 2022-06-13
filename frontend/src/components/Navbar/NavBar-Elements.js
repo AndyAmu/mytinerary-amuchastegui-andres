@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+    position: fixed;
     z-index: 10;
-    position: static;
     width: 100%;
     height: 10vh;
     background-color: black;
@@ -48,12 +48,12 @@ export const Menu = styled.ul`
     list-style: none;
 
     @media screen and (max-width: 960px){
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.932);
         position: absolute;
         top: 70px;
         right: ${({open}) => (open ? "0" : "-100%")}; // Muy importante
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
         justify-content: center;
         align-items: center;
         flex-direction: column;
@@ -77,7 +77,7 @@ export const MenuItem = styled.li`
     }
 `;
 
-export const MenuItemLink = styled.a`
+export const MenuItemLink = styled.div`
     display: flex;
     justify-content: center;
     align-items:center;

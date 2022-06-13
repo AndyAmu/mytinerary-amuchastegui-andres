@@ -8,6 +8,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import ListSubheader from '@mui/material/ListSubheader';
 import datos from '../datos'
 import {Link as LinkRouter} from 'react-router-dom'
+import { textAlign } from '@mui/system';
 
 export default function TitlebarImageList() {
     const [search, setSearch] = useState ('')
@@ -21,14 +22,14 @@ export default function TitlebarImageList() {
     }, [search])
 
     return (
-        <div>
+        <div className='contenedor-cities'>
             
         <ImageList sx={{paddingTop: "10rem", marginLeft: "5%", width: "90%" }}>
             <div>
                 <input onKeyUp={(e) => {setSearch(e.target.value)}} placeholder='Search' type='text'></input>
             </div>
             <ImageListItem  key="Subheader" cols={2}>
-            <ListSubheader component="div">Cities</ListSubheader>
+            <ListSubheader sx={{backgroundColor: 'black', color: 'white', textAlign: 'center'}} component="div">Cities</ListSubheader>
             </ImageListItem>
             {cities.map((item) => (
                 <ImageListItem key={item.imagen}>

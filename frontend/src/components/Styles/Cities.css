@@ -1,5 +1,20 @@
 .contenedor-cities {
     background-image: url(https://www.xtrafondos.com/wallpapers/muelle-at-atardecer-en-lago-5766.jpg);
     background-position: center;
-    min-height: 80vh;
+    min-height: 100vh;
+}
+
+.input {
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 20rem;
+    border-radius: 2rem;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.img-cities1 {
+    border-radius:1rem 1rem 0rem 0rem;
 }

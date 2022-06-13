@@ -10,8 +10,7 @@ import cities from './datos'
 
 export default function ActionAreaCard() {
     const {id}=useParams()
-    const [card, setCard] = useState(cities.filter(data => data.id == id))
-    console.log(setCard)
+    const [card] = useState(cities.filter(data => data.id === parseInt(id)))
 
     return (
         card.map((e, index) => 

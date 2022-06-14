@@ -39,7 +39,7 @@ const NavBar = () => {
     };
 
     return (
-        <AppBar sx={{ backgroundColor: 'black' }} position="fixed">
+        <AppBar className='NavBar' sx={{ backgroundColor: 'black' }} position="fixed">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

@@ -17,3 +17,7 @@ a:hover{
 .MuiList-root{
     background-color: black;
 }
+
+.NavBar {
+    min-height: 10vh;
+}

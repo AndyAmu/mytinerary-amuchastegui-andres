@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import {useParams} from 'react-router-dom'
 import cities from './datos'
+import '../components/Styles/Details.css'
 
 
 export default function ActionAreaCard() {
@@ -14,11 +15,12 @@ export default function ActionAreaCard() {
 
     return (
         card.map((e, index) => 
-        <Card key='index' sx={{ maxWidth: 345 }}>
+        <div key={index} className='details-contenedor'>
+        <Card key='index' sx={{ maxWidth: 500 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="140"
+                    height="350"
                     image={e.imagen}
                     alt="green iguana"
                 />
@@ -30,6 +32,7 @@ export default function ActionAreaCard() {
                 </CardContent>
             </CardActionArea>
         </Card>
+        </div>
         )
     );
 }

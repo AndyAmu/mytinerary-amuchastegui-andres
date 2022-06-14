@@ -22,13 +22,14 @@ export default function TitlebarImageList() {
     }, [search])
 
     return (
+        
         <div className='contenedor-cities'>
             
-        <ImageList sx={{gap:'40px!important', paddingTop: "10rem", marginLeft: "5%", width: "90%" }}>
+        <ImageList sx={{gap:'40px!important', paddingTop: "8rem", marginLeft: "15%", width: "70%" }}>
             
             <ImageListItem  key="Subheader" cols={2}>
             <input className='input' onKeyUp={(e) => {setSearch(e.target.value)}} placeholder='Search City' type='text'></input>
-            <ListSubheader sx={{borderRadius: '2rem', backgroundColor: 'black', color: 'white', textAlign: 'center'}} component="div">Cities</ListSubheader>
+            <ListSubheader sx={{borderRadius: '1rem', backgroundColor: 'black', color: 'white', textAlign: 'center'}} component="div">Cities</ListSubheader>
             </ImageListItem>
             {cities.map((item) => (
                 <ImageListItem key={item.imagen}>
@@ -38,7 +39,7 @@ export default function TitlebarImageList() {
                         alt={item.ciudad}
                         loading="lazy"
                     />
-                    <ImageListItemBar className='img-cities'
+                    <ImageListItemBar
                         title={item.ciudad}
                         subtitle={item.pais}
                         actionIcon={
@@ -57,8 +58,8 @@ export default function TitlebarImageList() {
             ))}
             
         </ImageList>
-        
         </div>
+        
     );
 
 

@@ -7,7 +7,7 @@ import '../Styles/Navbar.css'
 const NavBar = () => {
     const [showMobileMenu, setMobileMenu] = useState(false)
     return (
-        <div>
+        
             <Container>
                 <Wrapper>
                     <IconContext.Provider value={{ style: {fontSize: "2em" }}}>
@@ -45,7 +45,7 @@ const NavBar = () => {
                     </IconContext.Provider>
                 </Wrapper>
             </Container>
-        </div>
+        
     )
 }
 

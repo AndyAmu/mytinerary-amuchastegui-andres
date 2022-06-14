@@ -13,7 +13,6 @@ import ActionAreaCard from './components/Details'
 import ScrollToTop from "react-scroll-to-top";
 import FileUploadIcon from '@mui/icons-material/FileUpload';
 
-
 function App() {
   return (
     <>

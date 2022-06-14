@@ -1,8 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Mina&family=Ramabhadra&family=Righteous&display=swap');
+.logo {
+    width: 10rem;
+    padding: 1.5rem;
+}
 
-.LinkRouter {
-    font-family: 'Bree Serif', serif;
-font-family: 'Mina', sans-serif;
-font-family: 'Ramabhadra', sans-serif;
-font-family: 'Righteous', cursive;
+a {
+    text-decoration: none !important;
+    color: white;
+    transition: .5s;
+}
+
+a:hover{
+    color: #ffc107!important;
+    transition: .5s;
+}
+
+.MuiList-root{
+    background-color: black;
 }

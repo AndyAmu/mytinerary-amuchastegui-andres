@@ -1,52 +1,175 @@
-import {Link as LinkRouter} from "react-router-dom"
-import React, {useState} from 'react'
-import { Container, LogoContainer, Menu, MenuItem, MenuItemLink, MobileIcon, Wrapper } from './NavBar-Elements'
-import { FaAvianex, FaAlignJustify, FaUserCircle } from "react-icons/fa";
-import { IconContext } from 'react-icons'; // Estilos globales
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
 import '../Styles/Navbar.css'
+import logo from '../images/logo.png'
+import { Link as LinkRouter } from "react-router-dom"
+
+
+const pages = [{ to: '/', name: 'Home' }, { to: '/Cities', name: 'Cities' }];
+const settings = [{ to: '/Login', name: 'Sign Up' }, { to: '/Login', name: 'Sign In' }];
+
 const NavBar = () => {
-    const [showMobileMenu, setMobileMenu] = useState(false)
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+    const handleOpenNavMenu = (event) => {
+        setAnchorElNav(event.currentTarget);
+    };
+    const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
+    };
+
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
+
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
+
     return (
-        
-            <Container>
-                <Wrapper>
-                    <IconContext.Provider value={{ style: {fontSize: "2em" }}}>
-                    <LogoContainer>
-                        <LinkRouter  to='/'>
-                        <FaAvianex />
-                        </LinkRouter>
-                        <p>My</p>
-                        <p>Tinerary</p>                        
-                    </LogoContainer>
+        <AppBar sx={{ backgroundColor: 'black' }} position="fixed">
+            <Container maxWidth="xl">
+                <Toolbar disableGutters>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
 
-                    <MobileIcon onClick = {() => setMobileMenu(!showMobileMenu)}>
-                        <FaAlignJustify />
-                    </MobileIcon>
+                    </Box>
+                    <Box></Box>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="a"
+                        href="/"
+                        sx={{
+                            mr: 2,
+                            display: { xs: 'none', md: 'flex' },
+                            fontFamily: 'monospace',
+                            fontWeight: 700,
+                            letterSpacing: '.3rem',
+                            color: 'inherit',
+                            textDecoration: 'none',
+                        }}
+                    >
 
-                    <Menu open= {showMobileMenu}>
-                        <MenuItem>
-                        <MenuItemLink>
-                        <LinkRouter onClick = {() => setMobileMenu(!showMobileMenu)} style={{color:"white"}} className='LinkRouter'  to='/'>Home</LinkRouter>
-                        </MenuItemLink>
-                            
-                        </MenuItem>
-                        <MenuItem>
-                        <MenuItemLink>
-                            <LinkRouter onClick = {() => setMobileMenu(!showMobileMenu)} style={{color:"white"}} className='LinkRouter'  to='/Cities'>Cities</LinkRouter>
-                            </MenuItemLink>
-                        </MenuItem>
-                        <MenuItem>
-                            <MenuItemLink>
-                            <LinkRouter onClick = {() => setMobileMenu(!showMobileMenu)} style={{color:"white"}} className='LinkRouter'  to='/Login'><FaUserCircle /></LinkRouter>
-                            </MenuItemLink>
-                            
-                        </MenuItem>
-                    </Menu>
-                    </IconContext.Provider>
-                </Wrapper>
+                    </Typography>
+
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                        <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={handleOpenNavMenu}
+                            color="inherit"
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Menu
+                            id="menu-appbar"
+                            anchorEl={anchorElNav}
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'left',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'left',
+                            }}
+                            open={Boolean(anchorElNav)}
+                            onClose={handleCloseNavMenu}
+                            sx={{
+                                display: { xs: 'block', md: 'none' },
+                            }}
+                        >
+                            {pages.map((page, index) => (
+                                <LinkRouter style={{color:"white", linkStyle: "none"}} to={page.to} key={index} onClick={handleCloseNavMenu}>
+                                    <MenuItem style={{ backgroundColor: 'black' }}>
+                                        <Typography textAlign="center">{page.name}</Typography>
+                                    </MenuItem>
+                                </LinkRouter>
+                            ))}
+                        </Menu>
+                    </Box>
+                    <LinkRouter to='/'>             
+                    <img className='logo' src={logo} alt='' href="index.html" />
+                    </LinkRouter>
+                    <Typography
+                        variant="h5"
+                        noWrap
+                        component="a"
+                        href=""
+                        sx={{
+                            mr: 2,
+                            display: { xs: 'flex', md: 'none' },
+                            flexGrow: 1,
+                            fontFamily: 'monospace',
+                            fontWeight: 700,
+                            letterSpacing: '.3rem',
+                            color: 'inherit',
+                            textDecoration: 'none',
+                        }}
+                    >
+
+                    </Typography>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'end', marginRight: '40px' }}>
+                    {pages.map((page,index) => (
+                            <LinkRouter style={{color:"white"}} to={page.to} key={index} >
+                            <Button 
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: 'inherit', display: 'block' }}
+                            >{page.name}
+                            </Button>
+                            </LinkRouter>
+
+                        ))}
+                    </Box>
+
+                    <Box sx={{ flexGrow: 0 }}>
+                        <Tooltip title="Open settings">
+                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                <Avatar alt="Remy Sharp" src="http://assets.stickpng.com/images/585e4bd7cb11b227491c3397.png" />
+                            </IconButton>
+                        </Tooltip>
+                        <Menu
+                            sx={{ mt: '45px' }}
+                            id="menu-appbar"
+                            anchorEl={anchorElUser}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            open={Boolean(anchorElUser)}
+                            onClose={handleCloseUserMenu}
+                        >
+                            {settings.map((setting,index) => (
+                                <LinkRouter style={{color:"white"}} to={setting.to} key={index} onClick={handleCloseUserMenu} >                    
+                                <MenuItem >
+                                    <Typography textAlign="center">{setting.name}</Typography>
+                                </MenuItem>
+                                </LinkRouter>   
+                            ))}
+                        </Menu>
+                    </Box>
+                </Toolbar>
             </Container>
-        
-    )
-}
-
-export default NavBar
+        </AppBar>
+    );
+};
+export default NavBar;

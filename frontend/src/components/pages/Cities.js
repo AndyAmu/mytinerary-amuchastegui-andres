@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import * as React from 'react';
 
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
@@ -6,20 +6,29 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import ListSubheader from '@mui/material/ListSubheader';
-import datos from '../datos'
+// import datos from '../datos'
 import {Link as LinkRouter} from 'react-router-dom'
 import Box from '@mui/material/Box';
+import axios from 'axios'
 
 
 export default function TitlebarImageList() {
-    const [search, setSearch] = useState ('')
-    const [cities, setCities] = useState ([])
 
-    useEffect(() => {
-        setCities(datos)
 
-        let city = datos.filter(city => city.name.toLowerCase().startsWith(search.trim().toLowerCase()))
-        setCities(city)
+    const [cities, setcities] = React.useState([])
+    const [search, setSearch] = React.useState('')
+
+
+    React.useEffect(() => {
+        axios.get("http://localhost:4000/api/cities")
+            .then(response => {
+                console.log(response)
+
+
+
+                let city = response.data.response.cities.filter(city => city.name.toLowerCase().startsWith(search.trim().toLowerCase()))
+                setcities(city)
+            })
     }, [search])
 
     return (

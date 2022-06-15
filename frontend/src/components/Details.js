@@ -5,34 +5,42 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import {useParams} from 'react-router-dom'
-import cities from './datos'
+// import cities from './datos'
 import '../components/Styles/Details.css'
+import axios from 'axios'
+import { useEffect } from 'react';
 
 
 export default function ActionAreaCard() {
     const {id}=useParams()
-    const [card] = useState(cities.filter(data => data.id === parseInt(id)))
+    const [card,setCity] = useState([])
 
+    useEffect(() => {
+        axios.get(`http://localhost:4000/api/cities/${id}`)
+        .then(response => setCity(response.data.response.city))},[])
+
+    
     return (
-        card.map((e, index) => 
-        <div key={index} className='details-contenedor'>
+        <div key={card._id} className='details-contenedor'>
         <Card key='index' sx={{ maxWidth: 500 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
                     height="350"
-                    image={e.image}
+                    image={card.image}
                     alt="green iguana"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        {e.name}
+                        {card.name}
+                        
                     </Typography>
+                    <p>{card.description}</p>
                     
                 </CardContent>
             </CardActionArea>
         </Card>
         </div>
         )
-    );
+    ;
 }

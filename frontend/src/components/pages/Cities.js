@@ -55,7 +55,7 @@ export default function TitlebarImageList() {
                         title={item.name}
                         subtitle={item.country}
                         actionIcon={
-                            <LinkRouter to={`/Details/${item.id}`}>
+                            <LinkRouter to={`/Details/${item._id}`}>
                             <IconButton
                                 sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
                                 aria-label={`info about ${item.name}`}

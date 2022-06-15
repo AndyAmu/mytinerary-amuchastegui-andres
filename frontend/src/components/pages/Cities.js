@@ -18,7 +18,7 @@ export default function TitlebarImageList() {
     useEffect(() => {
         setCities(datos)
 
-        let city = datos.filter(city => city.ciudad.toLowerCase().startsWith(search.trim().toLowerCase()))
+        let city = datos.filter(city => city.name.toLowerCase().startsWith(search.trim().toLowerCase()))
         setCities(city)
     }, [search])
 
@@ -35,21 +35,21 @@ export default function TitlebarImageList() {
             <ListSubheader sx={{borderRadius: '1rem', backgroundColor: 'rgba(0, 0, 0, 0.623)', color: 'white', textAlign: 'center'}} component="div">Cities</ListSubheader>
             </ImageListItem>
             {cities.map((item) => (
-                <ImageListItem key={item.imagen}>
+                <ImageListItem key={item.image}>
                     <img className='img-cities1'
-                        src={`${item.imagen}?w=248&fit=crop&auto=format`}
-                        srcSet={`${item.imagen}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                        alt={item.ciudad}
+                        src={`${item.image}?w=248&fit=crop&auto=format`}
+                        srcSet={`${item.image}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                        alt={item.name}
                         loading="lazy"
                     />
                     <ImageListItemBar
-                        title={item.ciudad}
-                        subtitle={item.pais}
+                        title={item.name}
+                        subtitle={item.country}
                         actionIcon={
                             <LinkRouter to={`/Details/${item.id}`}>
                             <IconButton
                                 sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                                aria-label={`info about ${item.ciudad}`}
+                                aria-label={`info about ${item.name}`}
                             >
 
                                 <InfoIcon />

@@ -21,12 +21,12 @@ export default function ActionAreaCard() {
                 <CardMedia
                     component="img"
                     height="350"
-                    image={e.imagen}
+                    image={e.image}
                     alt="green iguana"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        {e.ciudad}
+                        {e.name}
                     </Typography>
                     
                 </CardContent>

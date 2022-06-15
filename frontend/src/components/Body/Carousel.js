@@ -14,10 +14,10 @@ const Gallery = (props) => {
                         <Carousel.Item key={index}>
                             <div className='texto-carousel'>
                                 
-                                <img className='img-carousel' src={item.imagen} alt={item.ciudad} />
+                                <img className='img-carousel' src={item.image} alt={item.name} />
 
-                                <h2 className='name-img-carusel'><b>{item.ciudad}</b></h2>
-                                <h4>{item.pais}</h4>
+                                <h2 className='name-img-carusel'><b>{item.name}</b></h2>
+                                <h4>{item.country}</h4>
                             </div>
 
                         </Carousel.Item>

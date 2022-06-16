@@ -9,6 +9,7 @@ import {useParams} from 'react-router-dom'
 import '../components/Styles/Details.css'
 import axios from 'axios'
 import { useEffect } from 'react';
+import {Link as LinkRouter} from "react-router-dom"
 
 
 export default function ActionAreaCard() {
@@ -17,12 +18,12 @@ export default function ActionAreaCard() {
 
     useEffect(() => {
         axios.get(`http://localhost:4000/api/cities/${id}`)
-        .then(response => setCity(response.data.response.city))},[])
+        .then(response => setCity(response.data.response.city))},)
 
     
     return (
         <div key={card._id} className='details-contenedor'>
-        <Card key='index' sx={{ maxWidth: 500 }}>
+        <Card key='index' sx={{maxWidth: 500 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
@@ -38,6 +39,7 @@ export default function ActionAreaCard() {
                     <p>{card.description}</p>
                     
                 </CardContent>
+                <LinkRouter style={{textDecoration:'none', textAlign: 'center', color: '#ffc107'}} to='/Cities'><p>Cities</p></LinkRouter>
             </CardActionArea>
         </Card>
         </div>

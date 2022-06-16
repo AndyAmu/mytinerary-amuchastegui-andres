@@ -39,7 +39,7 @@ export default function ActionAreaCard() {
                     <p>{card.description}</p>
                     
                 </CardContent>
-                <LinkRouter style={{textDecoration:'none', textAlign: 'center', color: '#ffc107'}} to='/Cities'><p>Cities</p></LinkRouter>
+                <LinkRouter style={{textDecoration:'none', textAlign: 'center', color: '#ffc107'}} to='/Cities'><p>Return to Cities</p></LinkRouter>
             </CardActionArea>
         </Card>
         </div>

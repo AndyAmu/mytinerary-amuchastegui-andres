@@ -18,8 +18,10 @@ export default function ActionAreaCard() {
 
     useEffect(() => {
         axios.get(`http://localhost:4000/api/cities/${id}`)
-        .then(response => setCity(response.data.response.city))},)
-
+        .then(response => setCity(response.data.response.city) )
+        
+    },)
+        
     
     return (
         <div key={card._id} className='details-contenedor'>
@@ -29,7 +31,7 @@ export default function ActionAreaCard() {
                     component="img"
                     height="350"
                     image={card.image}
-                    alt="green iguana"
+                    alt={card.name}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">

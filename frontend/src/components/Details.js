@@ -5,7 +5,6 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import {useParams} from 'react-router-dom'
-// import cities from './datos'
 import '../components/Styles/Details.css'
 import axios from 'axios'
 import { useEffect } from 'react';

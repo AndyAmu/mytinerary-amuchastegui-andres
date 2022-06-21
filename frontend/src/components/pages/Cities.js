@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import axios from 'axios'
 import Card from '../Card'
-import NotFound from '../NotFound';
+import Notfound from '../Notfound';
 
 
 export default function TitlebarImageList() {
@@ -33,7 +33,7 @@ export default function TitlebarImageList() {
         
 
     <Box>
-    {city?.length > 0 ? (<Card filterCard={city}/>) : (<NotFound/>)}
+    {city?.length > 0 ? (<Card filterCard={city}/>) : (<Notfound/>)}
     </Box>
     </div>
     

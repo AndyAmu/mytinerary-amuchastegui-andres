@@ -17,3 +17,15 @@
     background-color: rgba(0, 0, 0, 0.623);
     color: white;
 }
+
+.noencontro {
+    background-image: url(https://www.xtrafondos.com/wallpapers/muelle-at-atardecer-en-lago-5766.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-bottom: -1rem;
+    padding-bottom: 1rem;
+    min-height: 91.7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

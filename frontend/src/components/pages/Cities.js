@@ -22,19 +22,18 @@ export default function TitlebarImageList() {
 
     React.useEffect(() => {
         axios.get("http://localhost:4000/api/cities")
+
             .then(response => {
 
-
-
-                let city = response.data.response.cities.filter(city => city.name.toLowerCase().startsWith(search.trim().toLowerCase()))
-                setcities(city)
+                setcities(response.data.response.cities)
             })
-    }, [search])
 
+    }, [])
+
+    let city = cities.filter(city => city.name.toLowerCase().startsWith(search.trim().toLowerCase()))
 
 
     return (
-
         <div className='contenedor-cities'>
 
             <ImageList sx={{ gap: '40px!important', paddingTop: "8rem", marginLeft: "15%", width: "70%" }}>
@@ -45,7 +44,7 @@ export default function TitlebarImageList() {
                     </Box>
                     <ListSubheader sx={{ borderRadius: '1rem', backgroundColor: 'rgba(0, 0, 0, 0.623)', color: 'white', textAlign: 'center' }} component="div">Cities</ListSubheader>
                 </ImageListItem>
-                {cities.map((item) => (
+                {city.map((item) => (
                     <ImageListItem key={item.image}>
                         <img className='img-cities1'
                             src={`${item.image}?w=248&fit=crop&auto=format`}
@@ -72,9 +71,10 @@ export default function TitlebarImageList() {
                 ))}
 
             </ImageList>
+
         </div>
 
-    );
 
+    )
 
 }

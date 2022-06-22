@@ -12,8 +12,18 @@ import { Login } from './components/pages/Login'
 import ActionAreaCard from './components/Details'
 import ScrollToTop from "react-scroll-to-top";
 import FileUploadIcon from '@mui/icons-material/FileUpload';
+import {useEffect} from 'react'
+import citiesActions from './redux/actions/citiesActions'
+import {connect} from 'react-redux'
 
-function App() {
+
+
+function App(props) {
+
+  useEffect(() =>{
+    props.getCities()
+  }, [props])
+
   return (
     <>
     <NavBar />  
@@ -33,5 +43,7 @@ function App() {
     </>
   );
 }
-
-export default App
+const mapDispatchToprops = {
+  getCities: citiesActions.getCities,
+}
+export default connect(null,mapDispatchToprops)(App)

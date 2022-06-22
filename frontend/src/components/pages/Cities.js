@@ -1,27 +1,28 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import axios from 'axios'
+// import axios from 'axios'
 import Card from '../Card'
 import Notfound from '../Notfound';
+import { connect } from 'react-redux';
 
 
-export default function TitlebarImageList() {
+function Cities(props) {
 
 
-    const [cities, setcities] = React.useState([])
+    // const [cities, setcities] = React.useState([])
     const [search, setSearch] = React.useState('')
 
 
-    React.useEffect(() => {
-        axios.get("http://localhost:4000/api/cities")
+    // React.useEffect(() => {
+    //     axios.get("http://localhost:4000/api/cities")
 
-            .then(response => {
+    //         .then(response => {
 
-                setcities(response.data.response.cities)
-            })
-    }, [])
+    //             setcities(response.data.response.cities)
+    //         })
+    // }, [])
 
-    let city = cities?.filter(city => city.name.toLowerCase().startsWith(search.trim().toLowerCase()))
+    let city = props.cities?.filter(city => city.name.toLowerCase().startsWith(search.trim().toLowerCase()))
 
 
     return (
@@ -40,3 +41,10 @@ export default function TitlebarImageList() {
     )
 
 }
+const mapStateToProps = (state) => {
+    return{
+        cities: state.citiesReducer.cities,
+        auxiliar: state.citiesReducer.auxiliar
+    }
+}
+export default connect(mapStateToProps, null)(Cities)

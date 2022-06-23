@@ -36,7 +36,7 @@ export default function ActionAreaCard() {
         <div className='contenedor-details'> 
         <div key={card._id} className='details-contenedor'>
         <Card key='index'>
-            <CardActionArea sx={{backgroundColor: "black", width: "60rem"}}>
+            <CardActionArea sx={{backgroundColor: "#1b1919", width: "60rem"}}>
                 <CardMedia
                     component="img"
                     height="350"
@@ -44,7 +44,6 @@ export default function ActionAreaCard() {
                     alt={card.name}
                 />
                 <CardContent>
-                    console.log(card._id)
                     <Typography style={{color: "white"}} gutterBottom variant="h5" component="div">
                         {card.name}
                         

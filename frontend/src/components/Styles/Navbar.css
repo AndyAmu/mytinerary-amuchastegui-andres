@@ -1,6 +1,5 @@
 .logo {
     width: 10rem;
-    padding: 1.5rem;
 }
 
 a {
@@ -19,7 +18,12 @@ a:hover{
 .NavBar {
     min-height: 10vh!important;
     background-color: #1b1919!important;
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
 }
+
+
 
 
 .MuiMenuItem-root {

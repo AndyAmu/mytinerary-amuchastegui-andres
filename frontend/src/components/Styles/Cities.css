@@ -21,7 +21,7 @@
 }
 
 .buscador {
-    padding-top: 10rem;
+    padding-top: 2rem;
 }
 
 .noencontro {
@@ -38,4 +38,9 @@
     text-align: center;
 }
 
-
+@media (max-width: 600px) {
+    .MuiImageList-root {
+        display: flex!important;
+        flex-direction: column;        
+    }
+}

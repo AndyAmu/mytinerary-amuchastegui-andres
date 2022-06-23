@@ -39,7 +39,7 @@ const NavBar = () => {
     };
 
     return (
-        <AppBar className='NavBar'  position="fixed">
+        <AppBar className='NavBar'  position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -107,13 +107,10 @@ const NavBar = () => {
                     </LinkRouter>
                     <Typography
                         variant="h5"
-                        noWrap
-                        component="a"
-                        href=""
                         sx={{
-                            mr: 2,
+                            mr: 5,
                             display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
+                            flexGrow: 1.2,
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
@@ -121,7 +118,6 @@ const NavBar = () => {
                             textDecoration: 'none',
                         }}
                     >
-
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'end', marginRight: '40px' }}>
                     {pages.map((page,index) => (
@@ -136,9 +132,9 @@ const NavBar = () => {
                         ))}
                     </Box>
 
-                    <Box sx={{ flexGrow: 0 }}>
+                    <Box sx={{ flexGrow: 0, display: 'flex', justifyContent: 'center'}}>
                         <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, marginRight: "1rem" }}>
+                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp" src="" />
                             </IconButton>
                         </Tooltip>

@@ -39,7 +39,7 @@ const NavBar = () => {
     };
 
     return (
-        <AppBar className='NavBar' sx={{ backgroundColor: 'black' }} position="fixed">
+        <AppBar className='NavBar'  position="fixed">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -138,8 +138,8 @@ const NavBar = () => {
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="http://assets.stickpng.com/images/585e4bd7cb11b227491c3397.png" />
+                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, marginRight: "1rem" }}>
+                                <Avatar alt="Remy Sharp" src="" />
                             </IconButton>
                         </Tooltip>
                         <Menu

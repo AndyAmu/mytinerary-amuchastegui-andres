@@ -4,7 +4,7 @@
     background-size: cover;
     margin-bottom: -1rem;
     padding-bottom: 1rem;
-    min-height: 91.7vh;
+    min-height: 90.4vh;
 }
 
 .img-cities1 {
@@ -34,4 +34,15 @@
     color: white;
     -webkit-text-stroke: 1px #000000;
     text-align: center;
+}
+
+
+
+@media (min-width: 540px){
+    .imagenes-cities {
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+    flex-direction: column!important;
+    }
 }

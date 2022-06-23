@@ -14,15 +14,17 @@ import ScrollToTop from "react-scroll-to-top";
 import FileUploadIcon from '@mui/icons-material/FileUpload';
 import {useEffect} from 'react'
 import citiesActions from './redux/actions/citiesActions'
-import {connect} from 'react-redux'
+import { useDispatch} from "react-redux"
 
 
+function App() {
 
-function App(props) {
+  const dispatch = useDispatch()
 
   useEffect(() =>{
-    props.getCities()
-  }, [props])
+    dispatch(citiesActions.getCities())
+    //eslint-disable-next-line
+  }, [])
 
   return (
     <>
@@ -43,7 +45,4 @@ function App(props) {
     </>
   );
 }
-const mapDispatchToprops = {
-  getCities: citiesActions.getCities,
-}
-export default connect(null,mapDispatchToprops)(App)
+export default App

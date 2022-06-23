@@ -1,14 +1,17 @@
 .details-contenedor {
     background-image: url(https://www.xtrafondos.com/wallpapers/cabana-rodeada-de-palmas-y-montana-9545.jpg);
-    min-height: 90vh;
+    min-height: 88vh;
     background-size: cover;
     display: flex;
     justify-content:center ;
     align-items: center;
     padding-top: 5%;
-    
 }
 
-@media (min-width: 500px) {
-    
+.details-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10rem;
 }

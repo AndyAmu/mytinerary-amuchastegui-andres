@@ -6,7 +6,7 @@
 a {
     text-decoration: none !important;
     color: white;
-    transition: .5s;
+    transition: .3s;
 }
 
 a:hover{
@@ -14,10 +14,16 @@ a:hover{
     transition: .5s;
 }
 
-.MuiList-root{
-    background-color: black;
-}
+
 
 .NavBar {
     min-height: 10vh;
+    background-color: rgba(0, 0, 0, 0.301)!important;
+}
+
+.MuiPaper-root {
+    background-color: rgba(0, 0, 0, 0.301)!important;
+}
+.MuiMenuItem-root {
+    background-color: transparent!important;
 }

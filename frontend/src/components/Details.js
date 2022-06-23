@@ -33,14 +33,14 @@ export default function ActionAreaCard() {
 
     return (
         <>
+        <div className='contenedor-details'> 
         <div key={card._id} className='details-contenedor'>
-        <Card key='index' sx={{maxWidth: "100"}}>
-            <CardActionArea sx={{backgroundColor: "black"}}>
+        <Card key='index'>
+            <CardActionArea sx={{backgroundColor: "black", width: "60rem"}}>
                 <CardMedia
                     component="img"
                     height="350"
                     image={card.image}
-                    
                     alt={card.name}
                 />
                 <CardContent>
@@ -57,6 +57,7 @@ export default function ActionAreaCard() {
         </Card>
         
         
+        </div>
         <div>
             <Itineraries /> 
         </div>

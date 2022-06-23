@@ -17,13 +17,12 @@ a:hover{
 
 
 .NavBar {
-    min-height: 10vh;
-    background-color: rgba(0, 0, 0, 0.301)!important;
+    min-height: 10vh!important;
+    background-color: #1b1919!important;
 }
 
-.MuiPaper-root {
-    background-color: rgba(0, 0, 0, 0.301)!important;
-}
+
 .MuiMenuItem-root {
     background-color: transparent!important;
+    color: black!important;
 }

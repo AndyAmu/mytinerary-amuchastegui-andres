@@ -16,7 +16,7 @@ export default function Card({ filterCard }) {
         <ImageList sx={{ gap: '40px!important', marginLeft: "15%", width: "70%" }}>
 
             <ImageListItem className='imagenes-cities' key="Subheader" cols={2}>
-                <ListSubheader sx={{ borderRadius: '1rem', backgroundColor: 'rgba(0, 0, 0, 0.623)', color: 'white', textAlign: 'center' }} component="div">Cities</ListSubheader>
+                <ListSubheader sx={{ borderRadius: '1rem', color: 'white', textAlign: 'center' }} component="div">Cities</ListSubheader>
             </ImageListItem>
             {filterCard.map((item) => (
                 

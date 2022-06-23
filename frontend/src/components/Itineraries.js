@@ -49,7 +49,7 @@ export default function Itineraries() {
 
     return (
         itinerary.map((item, index) => 
-        <Card key={index}  sx={{ maxWidth: "90vh", backgroundColor: "black", color: "white" }}>
+        <Card key={index}  sx={{ width: "90vh", height: "100%", backgroundColor: "black", color: "white" }}>
             <CardHeader
                 
                 
@@ -58,9 +58,9 @@ export default function Itineraries() {
             <CardMedia
 
                 component="img"
-                height="194"
+                height="200"
                 image={item.profilePic}
-                alt="Paella dish"
+                
             />
             <Typography>{item.profilename}</Typography>
             <CardContent>
@@ -73,14 +73,16 @@ export default function Itineraries() {
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
-                    {item.likes}
-                </IconButton>
-                <IconButton aria-label="share">
+                <IconButton sx={{color: "white"}}  aria-label="add to favorites">
+                    <FavoriteIcon sx={{color: "red"}} />
+                    
+                </IconButton> 
+                {item.likes}
+                <IconButton sx={{color: "white"}} aria-label="share">
                     <ShareIcon />
                 </IconButton>
                 <ExpandMore
+                    sx={{color: "white"}}
                     expand={expanded}
                     onClick={handleExpandClick}
                     aria-expanded={expanded}

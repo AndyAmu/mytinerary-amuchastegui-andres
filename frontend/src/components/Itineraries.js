@@ -11,9 +11,6 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import { useParams } from 'react-router-dom';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { useEffect } from 'react';
 
 import '../components/Styles/Itineraries.css'
 import { Box } from '@mui/system';

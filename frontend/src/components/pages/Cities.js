@@ -1,15 +1,13 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-// import axios from 'axios'
 import Card from '../Card'
 import Notfound from '../Notfound';
-// import { connect } from 'react-redux';
 import { useDispatch, useSelector } from 'react-redux'
 import citiesActions from '../../redux/actions/citiesActions';
 
 
 function Cities() {
-// const [inputValue, setInputValue] = useState("")
+
     const [search, setSearch] = React.useState('')
 
     
@@ -21,8 +19,6 @@ function Cities() {
     }, [search])
 
     const city = useSelector(store => store.citiesReducer.filter)
-
-    // let city = props.cities?.filter(city => city.name.toLowerCase().startsWith(search.trim().toLowerCase()))
 
     return (
 
@@ -40,10 +36,4 @@ function Cities() {
     )
 
 }
-// const mapStateToProps = (state) => {
-//     return {
-//         cities: state.citiesReducer.cities,
-//         auxiliar: state.citiesReducer.auxiliar
-//     }
-// }
 export default Cities

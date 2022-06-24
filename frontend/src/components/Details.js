@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { useParams } from 'react-router-dom'
 import '../components/Styles/Details.css'
-// import axios from 'axios'
 import { useEffect } from 'react';
 import { Link as LinkRouter } from "react-router-dom"
 import { useDispatch } from 'react-redux';
@@ -18,15 +17,7 @@ import NotItinerarios from './NotItineraries';
 
 export default function ActionAreaCard() {
     const { id } = useParams()
-    // const [card,setCity] = useState([])
     const dispatch = useDispatch()
-
-    // useEffect(() => {
-    //     axios.get(`http://localhost:4000/api/cities/${id}`)
-    //     .then(response => setCity(response.data.response.city) )
-
-    // },)
-
     useEffect(() => {
         dispatch(citiesActions.getOneCity(id))
         dispatch(itinerariesActions.getItinerariesByCity(id))
@@ -35,7 +26,6 @@ export default function ActionAreaCard() {
 
 
     const itinerary = useSelector(store => store.itinerariesReducer.getItinerariesFromCity)
-    // console.log(itinerary)
 
     const card = useSelector(store => store.citiesReducer.oneCity)
 

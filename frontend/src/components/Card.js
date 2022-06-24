@@ -44,17 +44,8 @@ export default function Card({ filterCard }) {
                 </ImageListItem>
                 
             ))}
-
-            
-
         </ImageList>
-        
-
         </>
-        
-        
-        
-        
     );
     
 }

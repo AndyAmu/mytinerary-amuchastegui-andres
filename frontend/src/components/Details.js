@@ -36,10 +36,11 @@ export default function ActionAreaCard() {
         <div className='contenedor-details'> 
         <div key={card._id} className='details-contenedor'>
         <Card key='index'>
-            <CardActionArea sx={{backgroundColor: "#1b1919", width: "60rem"}}>
+            <CardActionArea sx={{backgroundColor: "#1b1919"}}>
                 <CardMedia
+                    className='card-details'
                     component="img"
-                    height="350"
+                    height="500"
                     image={card.image}
                     alt={card.name}
                 />

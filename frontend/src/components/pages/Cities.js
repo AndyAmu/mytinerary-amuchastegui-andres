@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import citiesActions from '../../redux/actions/citiesActions';
 
 
-function Cities(props) {
+function Cities() {
 // const [inputValue, setInputValue] = useState("")
     const [search, setSearch] = React.useState('')
 

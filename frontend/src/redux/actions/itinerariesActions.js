@@ -6,7 +6,7 @@ const itinerariesActions = {
     getItineraries: () => {
         return async (dispatch, getState) => {
             const res = await axios.get("http://localhost:4000/api/itineraries%22")
-        console.log(res)
+        // console.log(res)
         dispatch({ type: "GETITINERARIES", payload: res.data.response.itineraries })
 
     }
@@ -16,7 +16,7 @@ const itinerariesActions = {
     getOneItinerary: (id) => {
         return async (dispatch, getState) => {
             const res = await axios.get(`http://localhost:4000/api/itineraries/${id}`)
-                console.log(res)
+                // console.log(res)
         dispatch({ type: 'GETONEITINERARY', payload: res.data.response.itinerary })
     }
     },
@@ -24,7 +24,7 @@ const itinerariesActions = {
     getItinerariesByCity: (id) => {
         return async (dispatch, getState) => {
             const res = await axios.get(`http://localhost:4000/api/ItinerariesByCity/${id}`)
-                console.log(res)
+                // console.log(res)
         dispatch({ type: 'GETITINERARIESBYCITY', payload: res.data.response })
     }
     },

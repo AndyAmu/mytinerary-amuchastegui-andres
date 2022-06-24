@@ -11,13 +11,13 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useParams } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import itinerariesActions from '../redux/actions/itinerariesActions';
+// import { useParams } from 'react-router-dom';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { useEffect } from 'react';
+
 import '../components/Styles/Itineraries.css'
 import { Box } from '@mui/system';
-import NotItinerarios from './NotItineraries';
+
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
     return <IconButton {...other} />;
@@ -29,18 +29,7 @@ const ExpandMore = styled((props) => {
     }),
 }));
 
-export default function Itineraries() {
-
-
-    const { id } = useParams()
-    const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(itinerariesActions.getItinerariesByCity(id))
-        // eslint-disable-next-line
-    }, [])
-
-    const itinerary = useSelector(store => store.itinerariesReducer.getItinerariesFromCity)
-    console.log(itinerary)
+export default function Itineraries(props) {
 
 
     const [expanded, setExpanded] = React.useState(false);
@@ -49,35 +38,34 @@ export default function Itineraries() {
         setExpanded(!expanded);
     };
 
-    return (itinerary.length > 0 ?
-        itinerary.map((item, index) =>
-            <Box key={index}>
+    return (
+            <Box>
                 <Card className='card-itineraries' sx={{height: "100%", backgroundColor: "#1b1919", color: "white" }}>
 
-                    <Typography sx={{ textAlign: "center", fontSize: "2rem", marginBottom: "1rem", marginTop: "1rem" }}>{item.title}</Typography>
+                    <Typography sx={{ textAlign: "center", fontSize: "2rem", marginBottom: "1rem", marginTop: "1rem" }}>{props.title}</Typography>
 
                     <CardMedia
                         sx={{borderRadius: "50%", height: "10rem", width: "10rem" }}
                         className='img-profile'
                         component="img"
-                        image={item.profilePic}
+                        image={props.profilePic}
 
                     />
-                    <Typography>{item.profilename}</Typography>
+                    <Typography>{props.profilename}</Typography>
 
                     <CardContent>
 
                         <Typography sx={{ color: "white", textAlign: "center" }} variant="body2" color="text.secondary">
 
-                            {item.price},
+                            {props.price},
                         </Typography>
                         <Typography sx={{ color: "white", textAlign: "center" }} variant="body2" color="text.secondary">
-                            {item.hours},
+                            {props.hours},
                         </Typography>
 
                         <Typography sx={{ color: "blue", textAlign: "center" }} variant="body2" color="text.secondary">
 
-                            {item.hashtag}
+                            {props.hashtag}
                         </Typography>
 
                     </CardContent>
@@ -86,7 +74,7 @@ export default function Itineraries() {
                             <FavoriteIcon sx={{ color: "rgb(206, 26, 26)" }} />
 
                         </IconButton>
-                        {item.likes}
+                        {props.likes}
                         <IconButton sx={{ color: "white" }} aria-label="share">
                             <ShareIcon />
                         </IconButton>
@@ -102,13 +90,13 @@ export default function Itineraries() {
                     </CardActions>
                     <Collapse in={expanded} timeout="auto" unmountOnExit>
                         <CardContent>
-                            <Typography paragraph>{item.activities}</Typography>
+                            <Typography paragraph>{props.activities}</Typography>
 
                         </CardContent>
                     </Collapse>
                 </Card>
 
-            </Box>) : (<NotItinerarios />)
+            </Box>
 
     
     );

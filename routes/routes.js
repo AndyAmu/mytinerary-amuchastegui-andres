@@ -4,6 +4,8 @@ const {getCities, getOneCity, addCity, modifyCity,multiplesCities, removeCity} =
 
 const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItinerary, getItinerariesByCity} = require('../controllers/itineraryControllers')
 
+const {signInUser,singUpUsers} = require('../controllers/singControllers')
+
 
 // Cities
 Router.route('/cities')
@@ -33,5 +35,12 @@ Router.route("/multiplesItinerary")
 
 Router.route("/ItinerariesByCity/:id")
 .get(getItinerariesByCity)
+
+//SingIn SingUp
+Router.route('/auth/signUp')
+.post(singUpUsers)
+
+Router.route('/auth/signIn')
+.post(signInUser)
 
 module.exports = Router

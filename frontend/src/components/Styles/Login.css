@@ -8,3 +8,12 @@
     align-items: center;
     color: white;
 }
+
+.google {
+    width: 250px!important;
+    background-color: rgb(27, 25, 25)!important;
+}
+.facebook {
+    width: 250px!important;
+    height: 50px!important;
+}

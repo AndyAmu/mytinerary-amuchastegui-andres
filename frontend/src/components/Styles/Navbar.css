@@ -16,7 +16,7 @@ a:hover{
 
 
 .NavBar {
-    min-height: 10vh!important;
+    height: 8vh!important;
     background-color: #1b1919!important;
     display: flex!important;
     justify-content: center!important;

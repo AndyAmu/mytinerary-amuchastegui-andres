@@ -8,7 +8,8 @@ import "./components/Styles/Login.css"
 import Pagehome from './components/pages/Pagehome'
 import { Routes, Route } from 'react-router-dom'
 import  Cities  from './components/pages/Cities'
-import { Login } from './components/pages/Login'
+import  Login  from './components/pages/SingIn'
+import SignUp from './components/pages/SingUp'
 import ActionAreaCard from './components/Details'
 import ScrollToTop from "react-scroll-to-top";
 import FileUploadIcon from '@mui/icons-material/FileUpload';
@@ -33,6 +34,7 @@ function App() {
       <Route path="/" element={<Pagehome />} />
       <Route path="/cities" element={<Cities />} />
       <Route path="/login" element={<Login />} />
+      <Route path='/signup' element={<SignUp/>} />
       <Route path="/details/:id" element={<ActionAreaCard />} />
     </Routes>
     

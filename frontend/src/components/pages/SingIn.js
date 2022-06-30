@@ -53,7 +53,7 @@ export default function SignInSide() {
     }
 
     console.log(logedData)
-    dispatch(userActions.signIn(logedData))
+    dispatch(userActions.signInUser(logedData))
 
     setEmail("")
     setPassword("")

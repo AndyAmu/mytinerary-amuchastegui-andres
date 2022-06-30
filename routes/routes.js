@@ -6,6 +6,8 @@ const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeIti
 
 const {signInUser,singUpUsers} = require('../controllers/singControllers')
 
+const validator = require('../config/validator')
+
 
 // Cities
 Router.route('/cities')
@@ -36,11 +38,14 @@ Router.route("/multiplesItinerary")
 Router.route("/ItinerariesByCity/:id")
 .get(getItinerariesByCity)
 
-//SingIn SingUp
+//SingIn SingUp + validator
 Router.route('/auth/signUp')
-.post(singUpUsers)
+.post(validator, singUpUsers)
 
 Router.route('/auth/signIn')
 .post(signInUser)
+
+
+
 
 module.exports = Router

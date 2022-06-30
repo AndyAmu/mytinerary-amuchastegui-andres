@@ -72,7 +72,7 @@ const UserControllers = {
         },
 
         signInUser: async (req, res) => {
-            const { email, password, from } = req.body.userLogin
+            const { email, password, from } = req.body.logedData
             try {
                 const userExists = await User.findOne({ email })
                 // const indexpass = userExists.from.indexOf(from)

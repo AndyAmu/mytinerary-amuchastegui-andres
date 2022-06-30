@@ -28,23 +28,25 @@ const theme = createTheme();
 export default function SignUp() {
     const [nameUser,setNameUser]= useState("");
     const [lastNameUser,setLastNameUser]= useState("");
-    // const [photoUser,setPhotoUser]= useState("");
+    const [photoUser,setphotoUser]= useState("");
     const [email,setEmail]= useState("");
-    // const [country,setCountry]= useState("");
-    // const [from,setFrom]= useState("");
+    const [country] = useState("");
     const [password,setPassword]= useState("");
 
     const dispatch = useDispatch();
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log(event)
         const userData = {
             
             nameUser: nameUser,
             lastNameUser: lastNameUser,
+            photoUser: photoUser,
             email: email,
             from: "form-SignUp",
             password: password,
+            country: event.target[10].value,
         }
         console.log(userData)
         dispatch(userActions.signUp(userData))  
@@ -53,6 +55,7 @@ export default function SignUp() {
         setLastNameUser("")
         setPassword("")
         setEmail("")
+        setphotoUser("")
     
 };
 
@@ -123,6 +126,18 @@ export default function SignUp() {
                                         autoComplete="email"
                                     />
                                 </Grid>
+                                <Grid item xs={12}>
+                                    <TextField
+                                        onChange={e=>setphotoUser(e.target.value)}
+                                        value={photoUser}
+                                        required
+                                        fullWidth
+                                        id="photoUser"
+                                        label="photo URL"
+                                        name="photo URL"
+                                        autoComplete="photo URL"
+                                    />
+                                </Grid>
                                 
                                 <Grid item xs={12}>
                                     <TextField
@@ -138,7 +153,16 @@ export default function SignUp() {
                                     />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <CountrySelect/>
+                                    <CountrySelect
+                                    value={country}
+                                    required
+                                    fullWidth
+                                    name="country"
+                                    label="country"
+                                    type="country"
+                                    id="country"
+                                    autoComplete="new-country"
+                                    />
                                 </Grid>
 
                                 <Grid item xs={12}>

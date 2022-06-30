@@ -16,6 +16,8 @@ import FileUploadIcon from '@mui/icons-material/FileUpload';
 import {useEffect} from 'react'
 import citiesActions from './redux/actions/citiesActions'
 import { useDispatch} from "react-redux"
+import Snackbar from './components/Snackbar'
+
 
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
       <Route path='/signup' element={<SignUp/>} />
       <Route path="/details/:id" element={<ActionAreaCard />} />
     </Routes>
+    
+    <Snackbar />
     
     <Footer />
     <ScrollToTop

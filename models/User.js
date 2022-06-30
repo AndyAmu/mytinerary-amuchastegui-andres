@@ -5,7 +5,7 @@ const usersShema = new mongoose.Schema({
     lastNameUser:{type:String, require:true},
     photoUser:{type:String, require:true},
     email: {type:String, required:true},
-    country: {type:String},
+    country: {type:Array, required:true},
     from : {type:Array},
     password: {type:Array, required:true}, 
 })

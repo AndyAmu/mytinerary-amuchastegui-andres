@@ -12,13 +12,13 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import GoogleButton from 'react-google-button'
 import { FacebookLoginButton } from "react-social-login-buttons";
 import '../Styles/Login.css'
 import { Link } from '@mui/material';
 import { useDispatch} from 'react-redux';
 import userActions from '../../redux/actions/userActions';
 import {useState} from 'react';
+import GoogleSignIn from '../GoogleSignIn';
 
 
 function Copyright(props) {
@@ -130,9 +130,8 @@ export default function SignInSide() {
                                 Sign In
                             </Button>
                             <Grid sx={{display: 'flex', justifyContent: 'center', margin: '1rem'}}>
-                            <GoogleButton className='google' 
-                                onClick={() => { console.log('Google button clicked') }}
-                            />
+                            <GoogleSignIn /> 
+                            
                             </Grid>
                             <Grid sx={{display: 'flex', justifyContent: 'center', margin: '1rem'}}>
                             <FacebookLoginButton className='facebook' onClick={() => { console.log('Facebook button clicked') }}>

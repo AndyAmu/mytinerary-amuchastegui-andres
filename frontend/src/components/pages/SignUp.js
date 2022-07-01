@@ -13,7 +13,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CountrySelect from '../CountrySelect';
-import { FacebookLoginButton } from "react-social-login-buttons";
 import '../Styles/Login.css'
 
 import {useState} from 'react';
@@ -71,7 +70,7 @@ export default function SignUp() {
             alignItems: 'center'
         }}>
             <ThemeProvider theme={theme}>
-                <Container sx={{ backgroundColor: 'white' }} component="main" maxWidth="xs">
+                <Container sx={{ backgroundColor: 'white', borderRadius: '2rem' }} component="main" maxWidth="xs">
                     <CssBaseline />
                     <Box
                         sx={{
@@ -185,9 +184,6 @@ export default function SignUp() {
                             <GoogleSignUp/>
                             </Grid>
                             <Grid sx={{display: 'flex', justifyContent: 'center', margin: '1rem'}}>
-                            <FacebookLoginButton className='facebook' onClick={() => { console.log('Facebook button clicked') }}>
-                            <span>Sign up with Facebook</span>
-                            </FacebookLoginButton>
                             </Grid>
                             <Grid container justifyContent="flex-end">
                                 <Grid item>

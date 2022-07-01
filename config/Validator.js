@@ -13,7 +13,7 @@ const validator = (req, res, next) => {
             .messages({
                 'string.min': 'name: min 3 characters',
                 'string.max': 'name: max 20 characters'}),
-                lastNameUser: joi.string()
+        lastNameUser: joi.string()
             .min(3)
             .max(20)
             .trim()

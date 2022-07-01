@@ -1,6 +1,7 @@
 const express = require ('express')
 const Router = require ('./routes/routes')
 const cors = require('cors')
+const passport = require("passport")
 const PORT = 4000
 const app = express()
 
@@ -8,6 +9,7 @@ require('dotenv').config()
 require('./config/database')
 
 //middlewares
+app.use(passport.initialize())
 app.use(cors())
 app.use(express.json())
 app.use('/api', Router)

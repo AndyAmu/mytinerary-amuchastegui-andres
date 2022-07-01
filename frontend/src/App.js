@@ -8,8 +8,8 @@ import "./components/Styles/Login.css"
 import Pagehome from './components/pages/Pagehome'
 import { Routes, Route } from 'react-router-dom'
 import  Cities  from './components/pages/Cities'
-import  Login  from './components/pages/SingIn'
-import SignUp from './components/pages/SingUp'
+import  Login  from './components/pages/SignIn'
+import SignUp from './components/pages/SignUp'
 import ActionAreaCard from './components/Details'
 import ScrollToTop from "react-scroll-to-top";
 import FileUploadIcon from '@mui/icons-material/FileUpload';

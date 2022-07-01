@@ -34,12 +34,13 @@ function MySnackBar(props) {
 
         </Box>
     )
+    console.log(props.snackbar)
 
     console.log(props.snackbar.view);
     return (
         <Snackbar
             open={props.snackbar.view}
-            autoHideDuration={4000}
+            autoHideDuration={6000}
             onClose={handleClose}
             action={action}
             message={

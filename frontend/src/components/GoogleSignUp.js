@@ -9,21 +9,19 @@ export default function GoogleSignUp() {
 
 
     async function handleCallbackResponse(response) {
-        console.log(response.credential);
+        // console.log(response.credential);
         let userObject = jwt_decode(response.credential);
         console.log(userObject);
         dispatch(userActions.signUp({
-            userData: {
+            
                 nameUser: userObject.given_name,
-                latNameUser: userObject.family_name,
+                lastNameUser: userObject.family_name,
                 photoUser: userObject.picture,
                 email: userObject.email,
                 country: userObject.country,
                 from: 'google',
-                password: userObject.sub
-                
-                
-            }
+                password: userObject.sub  
+            
 
         }))
     }
@@ -31,7 +29,7 @@ export default function GoogleSignUp() {
     useEffect(() => {
         /* global google */
         google.accounts.id.initialize({
-            client_id: '603076230779-8snttgr541flvnnc669hbhasn8qlvjij.apps.googleusercontent.com',
+            client_id: '603076230779-1sch3rod74rrt1u3ql2akur0ilkhb15c.apps.googleusercontent.com',
             callback: handleCallbackResponse
         });
 

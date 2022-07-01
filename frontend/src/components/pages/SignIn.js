@@ -12,7 +12,6 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { FacebookLoginButton } from "react-social-login-buttons";
 import '../Styles/Login.css'
 import { Link } from '@mui/material';
 import { useDispatch} from 'react-redux';
@@ -130,13 +129,11 @@ export default function SignInSide() {
                                 Sign In
                             </Button>
                             <Grid sx={{display: 'flex', justifyContent: 'center', margin: '1rem'}}>
+                                
                             <GoogleSignIn /> 
                             
                             </Grid>
                             <Grid sx={{display: 'flex', justifyContent: 'center', margin: '1rem'}}>
-                            <FacebookLoginButton className='facebook' onClick={() => { console.log('Facebook button clicked') }}>
-                            <span>Sign in with Facebook</span>
-                            </FacebookLoginButton>
                             </Grid>
                             <Grid container>
                                 <Grid item xs>

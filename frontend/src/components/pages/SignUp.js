@@ -22,7 +22,6 @@ import GoogleSignUp from '../GoogleSignUp';
 import '../Styles/Body.css'
 
 
-
 const theme = createTheme();
 
 export default function SignUp() {
@@ -61,7 +60,7 @@ export default function SignUp() {
 
     return (
         <Box sx={{
-            backgroundImage: 'url(https://www.xtrafondos.com/wallpapers/playa-con-acantilado-al-lado-9569.jpg)',
+            backgroundImage: 'url(https://source.unsplash.com/random)',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             minHeight: "92vh",

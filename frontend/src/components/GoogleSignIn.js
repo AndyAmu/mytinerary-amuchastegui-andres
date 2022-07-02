@@ -27,11 +27,11 @@ export default function GoogleSignIn() {
         google.accounts.id.initialize({
             client_id: '603076230779-1sch3rod74rrt1u3ql2akur0ilkhb15c.apps.googleusercontent.com',
             callback: handleCallbackResponse
-        });
+                });
 
         google.accounts.id.renderButton(
             document.getElementById('buttonDiv'),
-            { theme: "outline", size: "medium" }
+            { theme: "outline", size: "medium", locale: "en" }
         )
     });
 

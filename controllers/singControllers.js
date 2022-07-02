@@ -179,6 +179,7 @@ const sendEmail = async (email, uniqueString) => { //FUNCION ENCARGADA DE ENVIAR
                                 await userExists.save()
 
                                 const token = jwt.sign({userData}, process.env.SECRET_KEY, {expiresIn: 60* 60*24})
+                                
                                 res.json({
                                     success: true,
                                     from: from,

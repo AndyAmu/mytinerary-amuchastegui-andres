@@ -4,7 +4,7 @@ const {getCities, getOneCity, addCity, modifyCity,multiplesCities, removeCity} =
 
 const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItinerary, getItinerariesByCity} = require('../controllers/itineraryControllers')
 
-const {signInUser,singUpUsers, singnOutUser,verifyEmail,verificationToken} = require('../controllers/singControllers')
+const {signInUser,singUpUsers, signOut,verifyEmail,verificationToken} = require('../controllers/singControllers')
 
 const validator = require('../config/validator')
 
@@ -52,7 +52,7 @@ Router.route('/verify/:uniqueString')
 
 //singUot
 Router.route('/auth/signOut')
-.post(singnOutUser)
+.post(signOut)
 
 
 //Token

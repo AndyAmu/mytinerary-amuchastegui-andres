@@ -29,7 +29,8 @@ function MySnackBar(props) {
             fontWeight: '400'}}>
             {(typeof props.snackbar.message) === "string" ?
                 (<p>{props.snackbar.message}</p>) :
-                <div>{props.snackbar.message.map((message,index) =><p key={index}>{message.message}</p>)}</div>
+                <div>0303457</div>
+                // <div>{props.snackbar.message.map((message,index) =><p key={index}>{message.message}</p>)}</div>
             }
 
         </Box>

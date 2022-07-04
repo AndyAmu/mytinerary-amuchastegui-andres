@@ -241,13 +241,15 @@ const sendEmail = async (email, uniqueString) => { //FUNCION ENCARGADA DE ENVIAR
             }
         },
 
-        singnOutUser: async (req, res) => {
-            const email = req.body.closeuser
-            const user = await USer.findOne({ email })
-
-            user.isConected = false
-            await user.save()
-            res.json({success:true})
+        signOut: async (req, res) => {
+        
+            const email = req.body.email
+            console.log(req.body.email)
+            const user = await User.findOne({email})
+            await user
+            res.json({
+                success: true,
+                message: email+' sign out!'})
         },
 
 

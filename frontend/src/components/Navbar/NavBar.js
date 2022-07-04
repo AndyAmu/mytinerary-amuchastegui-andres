@@ -14,12 +14,13 @@ import MenuItem from '@mui/material/MenuItem';
 import '../Styles/Navbar.css'
 import logo from '../images/logo.png'
 import { Link as LinkRouter } from "react-router-dom"
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 
 const pages = [{ to: '/', name: 'Home' }, { to: '/Cities', name: 'Cities' }];
 const settings = [{ to: '/Login', name: 'Sign In' }, { to: '/SignUp', name: 'Sign Up' }];
 
-const NavBar = () => {
+const NavBar = (props) => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -135,7 +136,9 @@ const NavBar = () => {
                     <Box sx={{ flexGrow: 0, display: 'flex', justifyContent: 'center'}}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="" />
+                            {props.user ?
+                            <Avatar src={props.user.photoUser} sx={{width: '40px', height: '40px'}}/> :
+                            <AccountCircleIcon  sx={{width:'80px', height:'50px', color:'white'}}/>}
                             </IconButton>
                         </Tooltip>
                         <Menu

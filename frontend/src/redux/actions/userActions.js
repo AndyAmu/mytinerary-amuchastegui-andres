@@ -51,15 +51,18 @@ const userActions = {
         } 
     },
 
-    SignOutUser: (closeuser) => {
+    signOut: (userData) => {
+        console.log(userData)
+        console.log('aca este el userdata')
         return async (dispatch, getState) => {
-            const user = await axios.post('http://localhost:4000/api/auth/signOut', { closeuser })
+            await axios.post('http://localhost:4000/api/auth/signOut',{...userData})       
             localStorage.removeItem('token')
-            dispatch({ type: 'user', payload: null });
-            dispatch({type:'userList'})
-            return user
-        }
-        
+            
+            dispatch({
+                type:'USER',
+                payload:null
+            })
+        }   
     },
 
 

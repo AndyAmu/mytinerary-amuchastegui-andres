@@ -52,7 +52,7 @@ export default function SignInSide() {
             from: "form-SignUp",
     }
 
-    console.log(logedData)
+    console.log('[SignIn.SignInSide] User: ', logedData)
     dispatch(userActions.signInUser(logedData))
 
     setEmail("")

@@ -12,7 +12,7 @@ export default function GoogleSignIn() {
     async function handleCallbackResponse(response) {
         // console.log(response.credential);
         let userObject = jwt_decode(response.credential);
-        console.log(userObject);
+        // console.log(userObject);
         await dispatch(userActions.signInUser({
 
                 email: userObject.email,

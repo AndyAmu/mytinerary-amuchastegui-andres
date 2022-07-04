@@ -54,7 +54,7 @@ export default function SignInSide() {
             from: "form-SignUp",
     }
 
-    await dispatch(userActions.signIn(logedData))// paso await para que espere el ingreso del user
+    await dispatch(userActions.signInUser(logedData))// paso await para que espere el ingreso del user
     
     const token = localStorage.getItem('token')//recupero el token de local store si esta seteado
     if (token) {// si esta el token lo redirecciono al Navigate
@@ -74,7 +74,7 @@ export default function SignInSide() {
                     sm={4}
                     md={7}
                     sx={{
-                        backgroundImage: 'url(https://source.unsplash.com/random)',
+                        backgroundImage: 'url(https://i.pinimg.com/originals/a5/11/32/a511323ec9460a20e7b78bd5e64bc20b.jpg)',
                         backgroundRepeat: 'no-repeat',
                         backgroundColor: (t) =>
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -123,10 +123,7 @@ export default function SignInSide() {
                                 id="password"
                                 autoComplete="current-password"
                             />
-                            <FormControlLabel
-                                control={<Checkbox value="remember" color="primary" />}
-                                label="Remember me"
-                            />
+                            
                             <Button
                                 type="submit"
                                 fullWidth
@@ -143,11 +140,6 @@ export default function SignInSide() {
                             <Grid sx={{display: 'flex', justifyContent: 'center', margin: '1rem'}}>
                             </Grid>
                             <Grid container>
-                                <Grid item xs>
-                                    <Link href="#" variant="body2">
-                                        Forgot password?
-                                    </Link>
-                                </Grid>
                                 <Grid item>
                                     <LinkRouter to='/signup' variant="body2">
                                         {"Don't have an account? Sign Up"}

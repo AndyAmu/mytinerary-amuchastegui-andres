@@ -56,7 +56,7 @@ Router.route('/auth/signOut')
 
 
 //Token
-Router.route('/auth/signInToken')
-.get(passport.authenticate('jwt',{ session: false}),verificationToken)
+Router.route('/auth/loginToken')
+.get(passport.authenticate('jwt',{ session: false }),verificationToken)
 
 module.exports = Router

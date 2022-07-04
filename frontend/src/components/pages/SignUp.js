@@ -3,8 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -36,7 +34,7 @@ export default function SignUp() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(event)
+        // console.log(event)
         const userData = {
             
             nameUser: nameUser,
@@ -47,7 +45,7 @@ export default function SignUp() {
             password: password,
             country: event.target[10].value,
         }
-        console.log(userData)
+        // console.log(userData)
         dispatch(userActions.signUp(userData))  
         
         setNameUser("")
@@ -60,7 +58,7 @@ export default function SignUp() {
 
     return (
         <Box sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random)',
+            backgroundImage: 'url(https://images7.alphacoders.com/381/381455.jpg)',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             minHeight: "92vh",
@@ -69,7 +67,7 @@ export default function SignUp() {
             alignItems: 'center'
         }}>
             <ThemeProvider theme={theme}>
-                <Container sx={{ backgroundColor: 'white', borderRadius: '2rem' }} component="main" maxWidth="xs">
+                <Container sx={{ backgroundColor: 'white', borderRadius: '2rem', margin: '2rem' }} component="main" maxWidth="xs">
                     <CssBaseline />
                     <Box
                         sx={{
@@ -161,13 +159,6 @@ export default function SignUp() {
                                     type="country"
                                     id="country"
                                     autoComplete="new-country"
-                                    />
-                                </Grid>
-
-                                <Grid item xs={12}>
-                                    <FormControlLabel
-                                        control={<Checkbox value="allowExtraEmails" color="primary" />}
-                                        label="I want to receive inspiration, marketing promotions and updates via email."
                                     />
                                 </Grid>
                             </Grid>

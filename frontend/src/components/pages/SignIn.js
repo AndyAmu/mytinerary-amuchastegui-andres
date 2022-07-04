@@ -18,6 +18,7 @@ import { useDispatch} from 'react-redux';
 import userActions from '../../redux/actions/userActions';
 import {useState} from 'react';
 import GoogleSignIn from '../GoogleSignIn';
+import { useNavigate } from 'react-router-dom';
 
 
 function Copyright(props) {
@@ -42,8 +43,9 @@ export default function SignInSide() {
 
     const dispatch = useDispatch();
     
+    const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const logedData = {
 
@@ -52,8 +54,12 @@ export default function SignInSide() {
             from: "form-SignUp",
     }
 
-    console.log('[SignIn.SignInSide] User: ', logedData)
-    dispatch(userActions.signInUser(logedData))
+    await dispatch(userActions.signIn(logedData))// paso await para que espere el ingreso del user
+    
+    const token = localStorage.getItem('token')//recupero el token de local store si esta seteado
+    if (token) {// si esta el token lo redirecciono al Navigate
+        navigate("/")
+    }
 
     setEmail("")
     setPassword("")

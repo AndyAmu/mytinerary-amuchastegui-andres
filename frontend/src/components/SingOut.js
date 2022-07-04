@@ -12,7 +12,7 @@ function SignOut(props) {
     return ( //returno el HTML
         <MenuItem onClick={props.handleCloseUserMenu}>
             <LinkRouter to={'/'}>
-                <Typography onClick={signOut} className='fredokaFont' sx={{color: 'white'}}>Sign Out</Typography>
+                <Typography onClick={signOut} className='fredokaFont' sx={{color: 'black'}}>Sign Out</Typography>
             </LinkRouter>
         </MenuItem>       
     )

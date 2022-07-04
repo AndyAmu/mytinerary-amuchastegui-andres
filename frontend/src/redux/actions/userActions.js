@@ -59,7 +59,7 @@ const userActions = {
             localStorage.removeItem('token')
             
             dispatch({
-                type:'USER',
+                type:'user',
                 payload:null
             })
         }   

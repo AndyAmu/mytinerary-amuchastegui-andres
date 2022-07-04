@@ -15,6 +15,9 @@ import '../Styles/Navbar.css'
 import logo from '../images/logo.png'
 import { Link as LinkRouter } from "react-router-dom"
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import SignOut from '../SingOut';
+import {connect} from 'react-redux'
+
 
 
 const pages = [{ to: '/', name: 'Home' }, { to: '/Cities', name: 'Cities' }];
@@ -157,12 +160,15 @@ const NavBar = (props) => {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {settings.map((setting,index) => (
-                                <LinkRouter style={{color:"white"}} to={setting.to} key={index} onClick={handleCloseUserMenu} >                    
+                            {props.user ? 
+                            <SignOut handleCloseUserMenu={handleCloseUserMenu}/> :
+                            settings.map((element,index) => (  
+                                <LinkRouter to={element.to} key={index} onClick={handleCloseUserMenu} >                    
                                 <MenuItem >
-                                    <Typography textAlign="center">{setting.name}</Typography>
+                                    <Typography textAlign="center">{element.name}</Typography>
                                 </MenuItem>
-                                </LinkRouter>   
+                                </LinkRouter>
+                                
                             ))}
                         </Menu>
                     </Box>
@@ -171,4 +177,10 @@ const NavBar = (props) => {
         </AppBar>
     );
 };
-export default NavBar;
+const mapStateToProps = (state) => {
+    return {
+        user: state.userReducer.user,
+    }
+}
+
+export default connect(mapStateToProps, null)(NavBar)

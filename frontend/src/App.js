@@ -6,7 +6,7 @@ import "./components/Styles/Carousel.css"
 import "./components/Styles/Cities.css"
 import "./components/Styles/Login.css"
 import Pagehome from './components/pages/Pagehome'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import  Cities  from './components/pages/Cities'
 import  Login  from './components/pages/SignIn'
 import SignUp from './components/pages/SignUp'
@@ -38,6 +38,9 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path='/signup' element={<SignUp/>} />
       <Route path="/details/:id" element={<ActionAreaCard />} />
+      <Route path='/login' render={() => {
+        return Login ? <Navigate to='/' /> : <Login />
+      }} />
     </Routes>
     
     <Snackbar />

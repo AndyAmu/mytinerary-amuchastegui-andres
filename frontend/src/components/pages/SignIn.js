@@ -3,8 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import {Link as LinkRouter} from "react-router-dom"
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -13,7 +11,6 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import '../Styles/Login.css'
-import { Link } from '@mui/material';
 import { useDispatch} from 'react-redux';
 import userActions from '../../redux/actions/userActions';
 import {useState} from 'react';
@@ -65,6 +62,16 @@ export default function SignInSide() {
     setPassword("")
     }
     return (
+        <Box 
+        sx={{
+            backgroundImage: 'url(https://i.pinimg.com/originals/a5/11/32/a511323ec9460a20e7b78bd5e64bc20b.jpg)',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+        }}>
         <ThemeProvider theme={theme}>
             <Grid container component="main" sx={{ height: '92vh' }}>
                 <CssBaseline />
@@ -73,14 +80,7 @@ export default function SignInSide() {
                     xs={false}
                     sm={4}
                     md={7}
-                    sx={{
-                        backgroundImage: 'url(https://i.pinimg.com/originals/a5/11/32/a511323ec9460a20e7b78bd5e64bc20b.jpg)',
-                        backgroundRepeat: 'no-repeat',
-                        backgroundColor: (t) =>
-                            t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
+                    
                 />
                 <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
                     <Box
@@ -152,5 +152,6 @@ export default function SignInSide() {
                 </Grid>
             </Grid>
         </ThemeProvider>
+        </Box>
     );
 }

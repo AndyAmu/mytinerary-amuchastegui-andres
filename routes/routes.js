@@ -4,7 +4,7 @@ const {getCities, getOneCity, addCity, modifyCity,multiplesCities, removeCity} =
 
 const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItinerary, getItinerariesByCity} = require('../controllers/itineraryControllers')
 
-const {signInUser,singUpUsers, signOut,verifyEmail,verificationToken} = require('../controllers/singControllers')
+const {signInUser,singUpUsers, signOut,verifyEmail,verificationToken} = require('../controllers/userControllers')
 
 const validator = require('../config/validator')
 

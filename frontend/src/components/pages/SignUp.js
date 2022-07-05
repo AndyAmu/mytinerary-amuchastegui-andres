@@ -12,9 +12,9 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CountrySelect from '../CountrySelect';
 import '../Styles/Login.css'
-
-import {useState} from 'react';
-import { useDispatch} from 'react-redux';
+import { Link as LinkRouter } from "react-router-dom"
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import userActions from '../../redux/actions/userActions';
 import GoogleSignUp from '../GoogleSignUp';
 import '../Styles/Body.css'
@@ -23,12 +23,12 @@ import '../Styles/Body.css'
 const theme = createTheme();
 
 export default function SignUp() {
-    const [nameUser,setNameUser]= useState("");
-    const [lastNameUser,setLastNameUser]= useState("");
-    const [photoUser,setphotoUser]= useState("");
-    const [email,setEmail]= useState("");
+    const [nameUser, setNameUser] = useState("");
+    const [lastNameUser, setLastNameUser] = useState("");
+    const [photoUser, setphotoUser] = useState("");
+    const [email, setEmail] = useState("");
     const [country] = useState("");
-    const [password,setPassword]= useState("");
+    const [password, setPassword] = useState("");
 
     const dispatch = useDispatch();
 
@@ -36,7 +36,7 @@ export default function SignUp() {
         event.preventDefault();
         // console.log(event)
         const userData = {
-            
+
             nameUser: nameUser,
             lastNameUser: lastNameUser,
             photoUser: photoUser,
@@ -46,15 +46,15 @@ export default function SignUp() {
             country: event.target[10].value,
         }
         // console.log(userData)
-        dispatch(userActions.signUp(userData))  
-        
+        dispatch(userActions.signUp(userData))
+
         setNameUser("")
         setLastNameUser("")
         setPassword("")
         setEmail("")
         setphotoUser("")
-    
-};
+
+    };
 
     return (
         <Box sx={{
@@ -67,7 +67,7 @@ export default function SignUp() {
             alignItems: 'center'
         }}>
             <ThemeProvider theme={theme}>
-                <Container sx={{ backgroundColor: 'white', borderRadius: '2rem', margin: '2rem' }} component="main" maxWidth="xs">
+                <Container sx={{ backgroundColor: 'white', borderRadius: '1rem' }} component="main" maxWidth="xs">
                     <CssBaseline />
                     <Box
                         sx={{
@@ -87,7 +87,7 @@ export default function SignUp() {
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={6}>
                                     <TextField
-                                        onChange={e=>setNameUser(e.target.value)}
+                                        onChange={e => setNameUser(e.target.value)}
                                         value={nameUser}
                                         autoComplete="given-name"
                                         name="firstName"
@@ -101,7 +101,7 @@ export default function SignUp() {
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <TextField
-                                        onChange={e=>setLastNameUser(e.target.value)}
+                                        onChange={e => setLastNameUser(e.target.value)}
                                         value={lastNameUser}
                                         required
                                         fullWidth
@@ -113,7 +113,7 @@ export default function SignUp() {
                                 </Grid>
                                 <Grid item xs={12}>
                                     <TextField
-                                        onChange={e=>setEmail(e.target.value)}
+                                        onChange={e => setEmail(e.target.value)}
                                         value={email}
                                         required
                                         fullWidth
@@ -125,7 +125,7 @@ export default function SignUp() {
                                 </Grid>
                                 <Grid item xs={12}>
                                     <TextField
-                                        onChange={e=>setphotoUser(e.target.value)}
+                                        onChange={e => setphotoUser(e.target.value)}
                                         value={photoUser}
                                         required
                                         fullWidth
@@ -135,10 +135,10 @@ export default function SignUp() {
                                         autoComplete="photo URL"
                                     />
                                 </Grid>
-                                
+
                                 <Grid item xs={12}>
                                     <TextField
-                                        onChange={e=>setPassword(e.target.value)}
+                                        onChange={e => setPassword(e.target.value)}
                                         value={password}
                                         required
                                         fullWidth
@@ -151,14 +151,14 @@ export default function SignUp() {
                                 </Grid>
                                 <Grid item xs={12}>
                                     <CountrySelect
-                                    value={country}
-                                    required
-                                    fullWidth
-                                    name="country"
-                                    label="country"
-                                    type="country"
-                                    id="country"
-                                    autoComplete="new-country"
+                                        value={country}
+                                        required
+                                        fullWidth
+                                        name="country"
+                                        label="country"
+                                        type="country"
+                                        id="country"
+                                        autoComplete="new-country"
                                     />
                                 </Grid>
                             </Grid>
@@ -166,25 +166,26 @@ export default function SignUp() {
                                 type="submit"
                                 fullWidth
                                 variant="contained"
-                                sx={{ mt: 3, mb: 2 , backgroundColor: 'rgb(27, 25, 25)'}}
+                                sx={{ mt: 3, mb: 2, backgroundColor: 'rgb(27, 25, 25)' }}
                             >
                                 Sign Up
                             </Button>
-                            <Grid sx={{display: 'flex', justifyContent: 'center', margin: '1rem'}}>
-                            <GoogleSignUp/>
+                            <Grid sx={{ display: 'flex', justifyContent: 'center', margin: '1rem' }}>
+                                <GoogleSignUp />
                             </Grid>
-                            <Grid sx={{display: 'flex', justifyContent: 'center', margin: '1rem'}}>
+                            <Grid sx={{ display: 'flex', justifyContent: 'center', margin: '1rem' }}>
                             </Grid>
                             <Grid container justifyContent="flex-end">
                                 <Grid item>
-                                    <Link href="#" variant="body2">
+                                    <LinkRouter to="/login">
                                         Already have an account? Sign in
-                                    </Link>
+                                    </LinkRouter>
+
                                 </Grid>
                             </Grid>
                         </Box>
                     </Box>
-                    
+
                 </Container>
             </ThemeProvider>
         </Box>

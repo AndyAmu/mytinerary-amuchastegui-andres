@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="8b81d349-ab79-46c9-8934-c09862ee90d7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/config/Validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/Validator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
@@ -13,6 +14,9 @@
       <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
+=======
+    <list default="true" id="8b81d349-ab79-46c9-8934-c09862ee90d7" name="Changes" comment="" />
+>>>>>>> 20813bbd5df105273f98e7f0614ddc3829b45cee
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,8 +52,15 @@
       <option name="presentableId" value="Default" />
       <updated>1656729494871</updated>
       <workItem from="1656729498501" duration="77000" />
+<<<<<<< HEAD
       <workItem from="1657023448365" duration="50000" />
+=======
+      <workItem from="1657023525618" duration="64000" />
+>>>>>>> 20813bbd5df105273f98e7f0614ddc3829b45cee
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

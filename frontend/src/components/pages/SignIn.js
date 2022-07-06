@@ -62,6 +62,16 @@ export default function SignInSide() {
     setPassword("")
     }
     return (
+        <Box 
+        sx={{
+            backgroundImage: 'url(https://i.pinimg.com/originals/a5/11/32/a511323ec9460a20e7b78bd5e64bc20b.jpg)',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+        }}>
         <ThemeProvider theme={theme}>
             <Grid container component="main" sx={{ height: '92vh' }}>
                 <CssBaseline />
@@ -70,14 +80,7 @@ export default function SignInSide() {
                     xs={false}
                     sm={4}
                     md={7}
-                    sx={{
-                        backgroundImage: 'url(https://i.pinimg.com/originals/a5/11/32/a511323ec9460a20e7b78bd5e64bc20b.jpg)',
-                        backgroundRepeat: 'no-repeat',
-                        backgroundColor: (t) =>
-                            t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
+                    
                 />
                 <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
                     <Box
@@ -149,5 +152,6 @@ export default function SignInSide() {
                 </Grid>
             </Grid>
         </ThemeProvider>
+        </Box>
     );
 }

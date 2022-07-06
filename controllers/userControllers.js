@@ -202,7 +202,7 @@ const sendEmail = async (email, uniqueString) => { // Encargada de enviar el mai
                                 res.json({
                                     success: false,
                                     from: from,
-                                    message: "You have not registered with" + from + "if you want to enter with this method you must do the SingUp with" + from
+                                    message: 'Wrong password or email, intent again'
                                 })
                             }
                         } else {

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
-
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
@@ -11,10 +10,9 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { CardActionArea } from '@mui/material';
-
 import '../components/Styles/Itineraries.css'
 import { Box } from '@mui/system';
+import Activities from './Activities'
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -26,6 +24,8 @@ const ExpandMore = styled((props) => {
         duration: theme.transitions.duration.shortest,
     }),
 }));
+
+
 
 export default function Itineraries(props) {
 
@@ -88,51 +88,14 @@ export default function Itineraries(props) {
                 </CardActions>
                 <Collapse in={expanded} timeout="auto" unmountOnExit>
                     <CardContent sx={{display: 'flex'}}>
-                        <Card sx={{ maxWidth: 345, margin: '2rem' }}>
-                            <CardActionArea>
-                                <CardMedia
-                                    component="img"
-                                    height="200"
-                                    image={props.profilePic}
-                                    alt=""
-                                />
-                                <CardContent>
-                                    <Typography variant="body2" color="text.secondary">
-                                    <Typography paragraph>{props.activities}</Typography>
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                        <Card sx={{ maxWidth: 345, margin: '2rem' }}>
-                            <CardActionArea>
-                                <CardMedia
-                                    component="img"
-                                    height="200"
-                                    image={props.profilePic}
-                                    alt=""
-                                />
-                                <CardContent>
-                                    <Typography variant="body2" color="text.secondary">
-                                    <Typography paragraph>{props.activities}</Typography>
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                        <Card sx={{ maxWidth: 345, margin: '2rem' }}>
-                            <CardActionArea>
-                                <CardMedia
-                                    component="img"
-                                    height="200"
-                                    image={props.profilePic}
-                                    alt=""
-                                />
-                                <CardContent>
-                                    <Typography variant="body2" color="text.secondary">
-                                    <Typography paragraph>{props.activities}</Typography>
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
+                        
+                    {props.activitiesId.length > 0 ?
+                        
+                        <Activities activitiesId={props.activitiesId} />                         
+                        : 
+                        <Box>
+                            <Typography variant='h1'>No hay nada wachin</Typography>
+                        </Box>}
                         
 
                     </CardContent>

@@ -132,6 +132,28 @@ const itineraryControllers = {
             success: error ? false : true,
             error: error
         })
+    },
+
+    likeDislike: async (req, res) => {
+        const id = req.params.id //LLEGA POR PARAMETRO DESDE AXIOS
+        const user = req.user.id //LLEGA POR RESPUESTA DE PASSPORT
+        //console.log(id);
+        //console.log(user);
+        await Itinerary.findOne({ _id: id })
+
+            .then((itinerary) => {
+                //console.log(itinerary)
+                if (itinerary.likes.includes(user)) {
+                    Itinerary.findOneAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })//con pull removemos
+                        .then((response) => res.json({ success: true, response: response.likes }))
+                        .catch((error) => console.log(error))
+                } else {
+                    Itinerary.findOneAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })//push subimos agregamos
+                        .then((response) => res.json({ success: true, response: response.likes }))
+                        .catch((error) => console.log(error))
+                }
+            })
+            .catch((error) => res.json({ success: false, response: error }))
     }
 }
 

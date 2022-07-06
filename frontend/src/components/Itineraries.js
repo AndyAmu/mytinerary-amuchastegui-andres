@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { CardActionArea } from '@mui/material';
 
 import '../components/Styles/Itineraries.css'
 import { Box } from '@mui/system';
@@ -36,65 +37,110 @@ export default function Itineraries(props) {
     };
 
     return (
-            <Box>
-                <Card className='card-itineraries' sx={{height: "100%", backgroundColor: "#1b1919", color: "white" }}>
+        <Box>
+            <Card className='card-itineraries' sx={{ height: "100%", backgroundColor: "#1b1919", color: "white" }}>
 
-                    <Typography sx={{ textAlign: "center", fontSize: "2rem", marginBottom: "1rem", marginTop: "1rem" }}>{props.title}</Typography>
+                <Typography sx={{ textAlign: "center", fontSize: "2rem", marginBottom: "1rem", marginTop: "1rem" }}>{props.title}</Typography>
 
-                    <CardMedia
-                        sx={{borderRadius: "50%", height: "10rem", width: "10rem" }}
-                        className='img-profile'
-                        component="img"
-                        image={props.profilePic}
+                <CardMedia
+                    sx={{ borderRadius: "50%", height: "10rem", width: "10rem" }}
+                    className='img-profile'
+                    component="img"
+                    image={props.profilePic}
 
-                    />
-                    <Typography>{props.profilename}</Typography>
+                />
+                <Typography>{props.profilename}</Typography>
 
-                    <CardContent>
+                <CardContent>
 
-                        <Typography sx={{ color: "white", textAlign: "center" }} variant="body2" color="text.secondary">
+                    <Typography sx={{ color: "white", textAlign: "center" }} variant="body2" color="text.secondary">
 
-                            {props.price},
-                        </Typography>
-                        <Typography sx={{ color: "white", textAlign: "center" }} variant="body2" color="text.secondary">
-                            {props.hours},
-                        </Typography>
+                        {props.price},
+                    </Typography>
+                    <Typography sx={{ color: "white", textAlign: "center" }} variant="body2" color="text.secondary">
+                        {props.hours},
+                    </Typography>
 
-                        <Typography sx={{ color: "blue", textAlign: "center" }} variant="body2" color="text.secondary">
+                    <Typography sx={{ color: "blue", textAlign: "center" }} variant="body2" color="text.secondary">
 
-                            {props.hashtag}
-                        </Typography>
+                        {props.hashtag}
+                    </Typography>
+
+                </CardContent>
+                <CardActions disableSpacing>
+                    <IconButton sx={{ color: "white" }} aria-label="add to favorites">
+                        <FavoriteIcon sx={{ color: "rgb(206, 26, 26)" }} />
+
+                    </IconButton>
+                    {props.likes}
+                    <IconButton sx={{ color: "white" }} aria-label="share">
+                        <ShareIcon />
+                    </IconButton>
+                    <ExpandMore
+                        sx={{ color: "white" }}
+                        expand={expanded}
+                        onClick={handleExpandClick}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                    >
+                        <ExpandMoreIcon />
+                    </ExpandMore>
+                </CardActions>
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                    <CardContent sx={{display: 'flex'}}>
+                        <Card sx={{ maxWidth: 345, margin: '2rem' }}>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    height="200"
+                                    image={props.profilePic}
+                                    alt=""
+                                />
+                                <CardContent>
+                                    <Typography variant="body2" color="text.secondary">
+                                    <Typography paragraph>{props.activities}</Typography>
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                        <Card sx={{ maxWidth: 345, margin: '2rem' }}>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    height="200"
+                                    image={props.profilePic}
+                                    alt=""
+                                />
+                                <CardContent>
+                                    <Typography variant="body2" color="text.secondary">
+                                    <Typography paragraph>{props.activities}</Typography>
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                        <Card sx={{ maxWidth: 345, margin: '2rem' }}>
+                            <CardActionArea>
+                                <CardMedia
+                                    component="img"
+                                    height="200"
+                                    image={props.profilePic}
+                                    alt=""
+                                />
+                                <CardContent>
+                                    <Typography variant="body2" color="text.secondary">
+                                    <Typography paragraph>{props.activities}</Typography>
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                        
 
                     </CardContent>
-                    <CardActions disableSpacing>
-                        <IconButton sx={{ color: "white" }} aria-label="add to favorites">
-                            <FavoriteIcon sx={{ color: "rgb(206, 26, 26)" }} />
+                </Collapse>
+            </Card>
 
-                        </IconButton>
-                        {props.likes}
-                        <IconButton sx={{ color: "white" }} aria-label="share">
-                            <ShareIcon />
-                        </IconButton>
-                        <ExpandMore
-                            sx={{ color: "white" }}
-                            expand={expanded}
-                            onClick={handleExpandClick}
-                            aria-expanded={expanded}
-                            aria-label="show more"
-                        >
-                            <ExpandMoreIcon />
-                        </ExpandMore>
-                    </CardActions>
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        <CardContent>
-                            <Typography paragraph>{props.activities}</Typography>
+        </Box>
 
-                        </CardContent>
-                    </Collapse>
-                </Card>
 
-            </Box>
-
-    
     );
 }

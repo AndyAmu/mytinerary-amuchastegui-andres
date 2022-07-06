@@ -2,7 +2,7 @@ const Router = require('express').Router();
 
 const {getCities, getOneCity, addCity, modifyCity,multiplesCities, removeCity} = require('../controllers/citiesControllers');
 
-const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItinerary, getItinerariesByCity} = require('../controllers/itineraryControllers')
+const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItinerary, getItinerariesByCity, likeDislike} = require('../controllers/itineraryControllers')
 
 const {signInUser,singUpUsers, signOut,verifyEmail,verificationToken} = require('../controllers/userControllers')
 
@@ -40,6 +40,9 @@ Router.route("/multiplesItinerary")
 
 Router.route("/ItinerariesByCity/:id")
 .get(getItinerariesByCity)
+
+Router.route("/like/:id")
+.put(passport.authenticate("jwt", {session: false}),likeDislike)
 
 //SingIn SingUp + validator + verificacion de usuario
 Router.route('/auth/signUp')

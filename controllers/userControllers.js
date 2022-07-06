@@ -7,9 +7,9 @@ const OAuth2 = google.auth.OAuth2;
 const jwt = require('jsonwebtoken')
 
 
-const sendEmail = async (email, uniqueString) => { // Encargada de enviar el mail
+const sendEmail = async (email, uniqueString) => { // Encargada de enviar el mail 
 
-    const myOAuth2Client = new OAuth2(
+    const myOAuth2Client = new OAuth2( // Cargo los nuevos servicios OAuth2
         process.env.GOOGLE_CLIENTID,
         process.env.GOOGLE_CLIENTSECRET,
         "https://developers.google.com/oauthplayground"
@@ -18,7 +18,10 @@ const sendEmail = async (email, uniqueString) => { // Encargada de enviar el mai
         refresh_token: process.env.GOOGLE_REFRESHTOKEN
     });
 
-    const accessToken = myOAuth2Client.getAccessToken()
+
+
+    // Función para envío de mails
+    const accessToken = myOAuth2Client.getAccessToken() // Pedido acceso al token
 
     const transporter = nodemailer.createTransport({ //Defino el transporte utilizando Nodemailer
         service: "gmail",
@@ -84,7 +87,7 @@ const sendEmail = async (email, uniqueString) => { // Encargada de enviar el mai
                         userExists.from.push(from)//El usuario que encontro en su campo from le voy a pushear desde from que es un array en mongo 
                         userExists.password.push(passwordHasheada)// Traigo la contrasela incriptada
                         if (from === "SignUpForm") {
-                            userExists.uniqueString = crypto.randomBytes(15).toString('hex')
+                            userExists.uniqueString = crypto.randomBytes(15).toString('hex') // definir de 15 caracteres y de tipo hexadecimal con métodos de un paquete que ahora está integrado a nodeJS: crypto
                             await userExists.save()
                             await sendEmail(email, userExists.uniqueString)
                             res.json({
@@ -112,7 +115,8 @@ const sendEmail = async (email, uniqueString) => { // Encargada de enviar el mai
                         country,
                         from: [from],
                         password: [passwordHasheada],
-                        uniqueString:crypto.randomBytes(15).toString('hex'),
+                        uniqueString:crypto.randomBytes(15).toString('hex'), // definir de 15 caracteres y de tipo hexadecimal con métodos de un paquete que ahora está integrado a nodeJS: crypto
+                        
                         emailVerified: false,
                     })
                     //Creo condicional anidado, veo si el from es diferente a mi formulario de registro
@@ -159,7 +163,7 @@ const sendEmail = async (email, uniqueString) => { // Encargada de enviar el mai
 
         signInUser: async (req, res) => {
             const { email, password, from } = req.body.logedData
-            try {
+            try { // Prueba
                 const userExists = await User.findOne({ email }) // busco password mediante from
                 // const indexpass = userExists.from.indexOf(from)
                 // console.log(usuarioExiste.password[indexpass])
@@ -169,7 +173,7 @@ const sendEmail = async (email, uniqueString) => { // Encargada de enviar el mai
                 } else {
                     if (from !== "LogInForm") {
                         
-                            let passwordmatch = userExists.password.filter(pass => bcryptjs.compareSync(password, pass))
+                            let passwordmatch = userExists.password.filter(pass => bcryptjs.compareSync(password, pass)) //Coincidencia de password 
                             // console.log(passwordmatch)
                             if (passwordmatch.length > 0) {
                                 const userData = {
@@ -186,7 +190,7 @@ const sendEmail = async (email, uniqueString) => { // Encargada de enviar el mai
                                 userExists.lastConection = new Date().toLocaleString()
                                 await userExists.save()
 
-                                const token = jwt.sign({userData}, process.env.SECRET_KEY, {expiresIn: 60* 60*24})
+                                const token = jwt.sign({userData}, process.env.SECRET_KEY, {expiresIn: 60* 60*24}) // Cadena alfanumérica con caracteres aleatorios
                                 
                                 res.json({
                                     success: true,

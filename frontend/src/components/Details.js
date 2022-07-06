@@ -59,7 +59,7 @@ export default function ActionAreaCard() {
                 <div>
                     {itinerary.length > 0 ?
                         itinerary.map((item, index) =>
-                            <Itineraries key={index} title={item.title} profilePic={item.profilePic} profilename={item.profilename} price={item.price} hours={item.hours} hasgtag={item.hashtag} likes={item.likes} activities={item.activities} />) : (<NotItinerarios />)}
+                            <Itineraries key={index} title={item.title} profilePic={item.profilePic} profilename={item.profilename} price={item.price} hours={item.hours} hashtag={item.hashtag} likes={item.likes} activities={item.activities} />) : (<NotItinerarios />)}
                 </div>
             </div>
 

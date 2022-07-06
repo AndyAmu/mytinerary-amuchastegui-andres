@@ -12,7 +12,7 @@ const app = express()
 require('./config/database')
 
 //middlewares
-app.use(passport.initialize())
+app.use(passport.initialize()) // Inicio passport
 app.use(cors())
 app.use(express.json())
 app.use('/api', Router)

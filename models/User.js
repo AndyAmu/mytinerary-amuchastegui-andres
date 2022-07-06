@@ -8,7 +8,7 @@ const usersShema = new mongoose.Schema({
     country: {type:Array, required:true},
     from : {type:Array},
     password: {type:Array, required:true},
-    uniqueString: {type:String, required:true}, // Clave unica aleatoria
+    uniqueString: {type:String, required:true}, // Clave unica aleatoria 
     emailVerified: {type: Boolean, required: true} //
 })
 const Users = mongoose.model('users', usersShema)

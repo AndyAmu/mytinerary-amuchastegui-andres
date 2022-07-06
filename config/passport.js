@@ -9,13 +9,12 @@ module.exports = passport.use(new jwtStrategy({
     secretOrKey:process.env.SECRET_KEY
 }, (jwt_payload, done) => {
 
-    User.findOne({ _id: jwt_payload.id })
+    User.findOne({ _id: jwt_payload.userData.id })
+        .then(userData => {
+            // console.log(userData)
+            if (userData) {
 
-        .then(user => {
-
-            if (user) {
-
-                return done(null, user)
+                return done(null, userData)
             }
             else if (err) {
 

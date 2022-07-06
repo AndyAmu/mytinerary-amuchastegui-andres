@@ -33,13 +33,13 @@ const userActions = {
             const res = await axios.post('http://localhost:4000/api/auth/signIn', { logedData })
             // console.log(res)
 
-            if (res.data.success) {
+            if (res.data.success) { // Si la respuesta es exitosa
                 localStorage.setItem('token', res.data.response.token)
                 dispatch({
                     type: 'user',
-                    payload: res.data.response.userData
+                    payload: res.data.response.userData // Carga 
                 })
-                dispatch({
+                dispatch({ // Este me larga el mensaje de Welcome
                     type: 'message',
                     payload: {
                         view: true,
@@ -76,7 +76,7 @@ const userActions = {
     verificationToken: (token) => {
         return async (dispatch, getState) => {
             //console.log(token)
-            const user = await axios.get('http://localhost:4000/api/auth/loginToken', {headers: {'Authorization': 'Bearer '+token}} )
+            const user = await axios.get('http://localhost:4000/api/auth/loginToken', {headers: {'Authorization': 'Bearer '+token}} ) // LE paso las cabeceras de la llamada a axios bajo la propiedad de “Authorizations” : “Bearer “ Bearer es un método estándar que nos permite realizar autenticación y autorización de usuarios,
             //console.log(userData)
             if (user.data.success) {
                 dispatch({

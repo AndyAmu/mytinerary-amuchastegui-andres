@@ -17,27 +17,37 @@ import {useEffect} from 'react'
 import citiesActions from './redux/actions/citiesActions'
 import { useDispatch} from "react-redux"
 import Snackbar from './components/Snackbar'
+import {connect} from 'react-redux'
+import userActions from './redux/actions/userActions'
 
 
-
-function App() {
+function App(props) {
 
   const dispatch = useDispatch()
 
-  useEffect(() =>{
+  
+
+  useEffect(() => {
     dispatch(citiesActions.getCities())
-    //eslint-disable-next-line
+    if(localStorage.getItem('token')!== null) {// si en el local storage tenemos token
+      const token = localStorage.getItem("token")
+      dispatch(userActions.verificationToken(token))
+    }
+    
+    // eslint-disable-next-line 
   }, [])
+  
 
   return (
     <>
     <NavBar />  
     <Routes>
+      <Route path="*" element={<Pagehome />} />
       <Route path="/" element={<Pagehome />} />
       <Route path="/cities" element={<Cities />} />
-      <Route path="/login" element={<Login />} />
-      <Route path='/signup' element={<SignUp/>} />
       <Route path="/details/:id" element={<ActionAreaCard />} />
+      {!props.user && <Route path='/login' element={<Login />} />}
+      {!props.user && <Route path='/signup' element={<SignUp />} />}
     </Routes>
     
     <Snackbar />
@@ -48,7 +58,19 @@ function App() {
                 smooth
                 viewBox="0 0 24 24"
                 component={<FileUploadIcon />} />
+
+    
     </>
+    
   );
+  
 }
-export default App
+const mapDispathToProps ={
+  verificationToken: userActions.verificationToken,
+}
+const mapStateToProps = (state) => {
+  return{
+    user: state.userReducer.user,
+  }
+}
+export default connect(mapStateToProps, mapDispathToProps) (App);

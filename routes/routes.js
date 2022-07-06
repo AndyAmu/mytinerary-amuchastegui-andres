@@ -4,7 +4,7 @@ const {getCities, getOneCity, addCity, modifyCity,multiplesCities, removeCity} =
 
 const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItinerary, getItinerariesByCity} = require('../controllers/itineraryControllers')
 
-const {signInUser,singUpUsers, signOut,verifyEmail,verificationToken} = require('../controllers/singControllers')
+const {signInUser,singUpUsers, signOut,verifyEmail,verificationToken} = require('../controllers/userControllers')
 
 const validator = require('../config/validator')
 
@@ -57,6 +57,6 @@ Router.route('/auth/signOut')
 
 //Token
 Router.route('/auth/loginToken')
-.get(passport.authenticate('jwt',{ session: false }),verificationToken)
+.get(passport.authenticate('jwt',{ session: false }),verificationToken) // Recibe dos parametros, primero el tipo de token JWT y las opciones session: false, en false porque no voy a ejecutar una sesión activa sinouna autenticación, si esta todo ok llamara a nuestro controlador verificarToke
 
 module.exports = Router

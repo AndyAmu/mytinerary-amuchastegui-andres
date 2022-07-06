@@ -23,14 +23,16 @@ function Cities() {
     return (
 
         <div className='contenedor-cities'>
+            
             <Box className='buscador' sx={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem', }}>
                 <input className='input' onKeyUp={(e) => { setSearch(e.target.value) }} placeholder='Search City' type='text'></input>
             </Box>
-
+            
 
             <Box>
                 {city?.length > 0 ? (<Card filterCard={city} />) : (<Notfound />)}
             </Box>
+            
         </div>
 
     )

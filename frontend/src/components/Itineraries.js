@@ -13,6 +13,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import '../components/Styles/Itineraries.css'
 import { Box } from '@mui/system';
 import Activities from './Activities'
+import { useDispatch } from 'react-redux';
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -87,14 +88,14 @@ export default function Itineraries(props) {
                     </ExpandMore>
                 </CardActions>
                 <Collapse in={expanded} timeout="auto" unmountOnExit>
-                    <CardContent sx={{display: 'flex'}}>
+                    <CardContent className='card-content'>
                         
                     {props.activitiesId.length > 0 ?
                         
                         <Activities activitiesId={props.activitiesId} />                         
                         : 
                         <Box>
-                            <Typography variant='h1'>No hay nada wachin</Typography>
+                            <Typography variant='h3'>There are no itineraries at the moment</Typography>
                         </Box>}
                         
 

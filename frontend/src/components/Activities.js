@@ -10,9 +10,7 @@ export default function Activities(activitiesId){
     return(
         <>
         {allActivities.activitiesId.map( activity =>
-        
         <CardContent key={activity._id} sx={{textAlign: 'center'}}>
-                        
         <Card sx={{ maxWidth: 300 }}>
             <CardActionArea>
                 
@@ -23,16 +21,11 @@ export default function Activities(activitiesId){
                     alt={activity.name}
                 />
                 <CardContent >
-                    
-                    <Typography paragraph>{activity.name}</Typography>
-                    
+                    <Typography paragraph>{activity.name}</Typography>           
                 </CardContent>
             </CardActionArea>
         </Card>
-        
-
-    </CardContent>    
-
+    </CardContent>
             )}
         </>
     )

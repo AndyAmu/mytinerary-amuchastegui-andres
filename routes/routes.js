@@ -10,6 +10,7 @@ const validator = require('../config/validator')
 
 const passport = require('../config/passport')
 
+const{getActivities,addActivity,removeActivity,modifyActivity,getOneActivity,multiplesActivities,getActivitiesByitinerary} = require('../controllers/activitiesControllers');
 
 // Cities
 Router.route('/cities')
@@ -58,5 +59,20 @@ Router.route('/auth/signOut')
 //Token
 Router.route('/auth/loginToken')
 .get(passport.authenticate('jwt',{ session: false }),verificationToken) // Recibe dos parametros, primero el tipo de token JWT y las opciones session: false, en false porque no voy a ejecutar una sesión activa sinouna autenticación, si esta todo ok llamara a nuestro controlador verificarToke
+
+Router.route('/activities')
+.get(getActivities)
+.post(addActivity)
+
+Router.route('/activities/:id')
+.delete(removeActivity)
+.put(modifyActivity)
+.get(getOneActivity)
+
+Router.route('/multiplesActivities')
+.post(multiplesActivities)
+
+Router.route('/activitiesbyitinerary/:id')
+.get(getActivitiesByitinerary)
 
 module.exports = Router

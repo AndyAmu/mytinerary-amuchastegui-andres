@@ -47,7 +47,9 @@ const itinerariesActions = {
                 console.log(error)
             }
         }
-    }
+    },
+
+    
 
 }
 

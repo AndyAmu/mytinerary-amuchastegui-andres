@@ -150,6 +150,7 @@ main {
     .button-85 {
         width: 19rem;
         height: 5rem;
+        justify-content: space-around;
     }
 }
 

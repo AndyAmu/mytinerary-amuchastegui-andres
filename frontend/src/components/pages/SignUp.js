@@ -66,7 +66,7 @@ export default function SignUp() {
             alignItems: 'center'
         }}>
             <ThemeProvider theme={theme}>
-                <Container sx={{ backgroundColor: 'white', borderRadius: '.5rem' }} component="main" maxWidth="xs">
+                <Container sx={{ backgroundColor: 'white'}} component="main" maxWidth="xs">
                     <CssBaseline />
                     <Box
                         sx={{

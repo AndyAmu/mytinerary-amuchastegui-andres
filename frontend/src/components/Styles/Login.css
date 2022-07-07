@@ -8,3 +8,7 @@
     align-items: center;
     color: white;
 }
+
+.signIn {
+    width: 20rem!important;
+}

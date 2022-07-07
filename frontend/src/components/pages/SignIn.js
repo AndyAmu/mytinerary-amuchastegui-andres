@@ -68,17 +68,14 @@ export default function SignInSide() {
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center'
         }}>
-        <ThemeProvider theme={theme}>
-            <Grid container component="main" sx={{ height: '92vh' }}>
+        <ThemeProvider   theme={theme}>
+            <Grid container component="main" sx={{ height: '92vh'}}>
                 <CssBaseline />
                 <Grid
                     item
                     xs={false}
-                    sm={4}
+                    sm={2}
                     md={7}
                     
                 />

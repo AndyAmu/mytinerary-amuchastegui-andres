@@ -1,5 +1,5 @@
 .contenedor-details{
-    background-image: url(https://www.xtrafondos.com/wallpapers/muelle-at-atardecer-en-lago-5766.jpg);
+    background-image: url(http://es.globewalls.art/wp-content/uploads/2018/10/Manchas-claro-oscuro-fondo.jpg);
     background-color: #0000002f;
     background-blend-mode: darken;
     background-position: center;
@@ -14,18 +14,32 @@
 
 .details-contenedor {
     margin-bottom: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     flex-direction: column;
     padding-top: 3rem;
-    width: 56rem;
+    width: 80rem;
     text-align: center;
+    object-fit: cover;
 }
 
-@media (max-width: 900px){
+@media (max-width: 1290px){
     .details-contenedor{
-        width: 50rem;
+        width: 70rem;
+    }
+}
+@media (max-width: 1130px){
+    .details-contenedor{
+        width: 65rem;
+    }
+}
+@media (max-width: 1050px){
+    .details-contenedor{
+        width: 60rem;
+    }
+}
+@media (max-width: 940px){
+    .details-contenedor{
+        width: 52rem;
     }
 }
 @media (max-width: 800px){

@@ -97,13 +97,13 @@ export default function Itineraries(props) {
                         <IconButton onClick={like}>
                             {likes.includes(user.id) ?
                         <FavoriteIcon  sx={{ color: 'red' }} /> :                     
-                        <FavoriteBorderIcon/> }
+                        <FavoriteBorderIcon sx={{color: 'white'}}/> }
                         <Typography sx={{color: 'white', marginLeft: '.4rem'}}> {likes.length} </Typography>
                         </IconButton> 
                         :
                         <IconButton>        
-                        <FavoriteBorderIcon/> 
-                        <Typography> {likes.length} </Typography>
+                        <FavoriteBorderIcon sx={{color: 'white'}}/> 
+                        <Typography sx={{color: 'white', marginLeft: '.4rem'}}> {likes.length} </Typography>
                         
                         </IconButton>
                     }

@@ -3,13 +3,13 @@ const Itinerary = require('../models/itinerary')
 const itineraryControllers = {
 
     getItineraries: async (req, res) => {
-        let itineraries 
-        let error = null 
-        try { 
-            itineraries = await Itinerary.find() 
-        } catch (err) { error = err } 
+        let itineraries
+        let error = null
+        try {
+            itineraries = await Itinerary.find()
+        } catch (err) { error = err }
         res.json({
-            response: error ? 'ERROR' : { itineraries }, 
+            response: error ? 'ERROR' : { itineraries },
             success: error ? false : true,
             error: error
         })
@@ -19,7 +19,7 @@ const itineraryControllers = {
         let itinerary
         let error = null
         try {
-            itinerary = await Itinerary.findOne({ _id: id }).populate('comments.userId',{name: 1, photo:1});
+            itinerary = await Itinerary.findOne({ _id: id })
         } catch (err) {
             error = err
         }
@@ -31,7 +31,7 @@ const itineraryControllers = {
     }
     ,
     addItinerary: async (req, res) => {
-        const { title, profilePic, profilename, likes, hours, price, hashtag, activities,cityId } = req.body.data
+        const { title, profilePic, profilename, likes, hours, price, hashtag, activities, cityId } = req.body.data
         let itinerary
         let error = null
         try {
@@ -55,17 +55,17 @@ const itineraryControllers = {
             error: error
         })
     },
-    
+
     modifyItinerary: async (req, res) => {
         const id = req.params.id
         const itinerary = req.body
         let itinerarydb
         let error = null
         try {
-            itinerarydb = await Itinerary.findOneAndUpdate( 
-                { _id: id }, 
+            itinerarydb = await Itinerary.findOneAndUpdate(
+                { _id: id },
                 itinerary,
-                { new: true }) 
+                { new: true })
         } catch (err) {
             error = err
         }
@@ -118,12 +118,12 @@ const itineraryControllers = {
             error: error
         })
     },
-    getItinerariesByCity: async (req,res) => {
+    getItinerariesByCity: async (req, res) => {
         const id = req.params.id
         let itineraries
         let error = null
         try {
-            itineraries = await Itinerary.find({ cityId : id }).populate('activitiesId')
+            itineraries = await Itinerary.find({ cityId: id }).populate('activitiesId')
         } catch (err) {
             error = err
         }
@@ -144,17 +144,17 @@ const itineraryControllers = {
             .then((itinerary) => {
                 //console.log(itinerary)
                 if (itinerary.likes.includes(user)) {
-                    Itinerary.findOneAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })//con pull removemos
+                    Itinerary.findOneAndUpdate({ _id: id }, { $pull: { likes: user } }, { new: true })//PULL QUITA, SACA
                         .then((response) => res.json({ success: true, response: response.likes }))
                         .catch((error) => console.log(error))
                 } else {
-                    Itinerary.findOneAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })//push subimos agregamos
+                    Itinerary.findOneAndUpdate({ _id: id }, { $push: { likes: user } }, { new: true })//PUSH AGREGA
                         .then((response) => res.json({ success: true, response: response.likes }))
                         .catch((error) => console.log(error))
                 }
             })
             .catch((error) => res.json({ success: false, response: error }))
-    }
+    },
 }
 
 module.exports = itineraryControllers

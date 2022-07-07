@@ -8,12 +8,17 @@ import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
+// import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import '../components/Styles/Itineraries.css'
 import { Box } from '@mui/system';
 import Activities from './Activities'
-import { useDispatch } from 'react-redux';
+
+import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import itinerariesActions from '../redux/actions/itinerariesActions';
+import { useEffect } from 'react'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -30,12 +35,31 @@ const ExpandMore = styled((props) => {
 
 export default function Itineraries(props) {
 
-
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
+    const [reload, setReload] = useState(false)
+    const [likes, setLikes] = useState(props.likes)
+    
+    const user = useSelector(store => store.userReducer.user)
+    
+    const dispatch = useDispatch()
+    
+    useEffect(() => {
+        dispatch(itinerariesActions.getOneItinerary(props.id))
+            .then(response => setLikes(response.likes))
+            //eslint-disable-next-line
+    },[!reload])
+    
+    // console.log(props)
+    
+    const like = async (event) => {
+        event.preventDefault();
+        await dispatch(itinerariesActions.likeDislike(props.id))
+        setReload(!reload)
+    }
 
     return (
         <Box>
@@ -69,14 +93,23 @@ export default function Itineraries(props) {
 
                 </CardContent>
                 <CardActions disableSpacing>
-                    <IconButton sx={{ color: "white" }} aria-label="add to favorites">
-                        <FavoriteIcon sx={{ color: "rgb(206, 26, 26)" }} />
-
-                    </IconButton>
-                    {props.likes}
-                    <IconButton sx={{ color: "white" }} aria-label="share">
+                {user ?
+                        <IconButton onClick={like}>
+                            {likes.includes(user.id) ?
+                        <FavoriteIcon  sx={{ color: 'red' }} /> :                     
+                        <FavoriteBorderIcon/> }
+                        <Typography sx={{color: 'white', marginLeft: '.4rem'}}> {likes.length} </Typography>
+                        </IconButton> 
+                        :
+                        <IconButton>        
+                        <FavoriteBorderIcon/> 
+                        <Typography> {likes.length} </Typography>
+                        
+                        </IconButton>
+                    }
+                    {/* <IconButton sx={{ color: "white" }} aria-label="share">
                         <ShareIcon />
-                    </IconButton>
+                    </IconButton> */}
                     <ExpandMore
                         sx={{ color: "white" }}
                         expand={expanded}

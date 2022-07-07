@@ -41,6 +41,7 @@ Router.route("/multiplesItinerary")
 Router.route("/ItinerariesByCity/:id")
 .get(getItinerariesByCity)
 
+// Likes
 Router.route("/like/:id")
 .put(passport.authenticate("jwt", {session: false}),likeDislike)
 

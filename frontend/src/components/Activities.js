@@ -9,8 +9,11 @@ export default function Activities(activitiesId){
     const allActivities= activitiesId
     return(
         <>
+        
         {allActivities.activitiesId.map( activity =>
+        
         <CardContent key={activity._id} sx={{textAlign: 'center'}}>
+            
         <Card sx={{ maxWidth: 300 }}>
             <CardActionArea>
                 

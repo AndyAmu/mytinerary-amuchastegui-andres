@@ -65,10 +65,13 @@ export default function ActionAreaCard() {
                             title={item.title} 
                             profilePic={item.profilePic} 
                             profilename={item.profilename} 
-                            price={item.price} hours={item.hours} 
-                            hashtag={item.hashtag} likes={item.likes} 
+                            price={item.price} 
+                            hours={item.hours} 
+                            hashtag={item.hashtag} 
+                            likes={item.likes} 
                             activities={item.activities} 
                             activitiesId={item.activitiesId}
+                            id={item._id}
                             />) : (<NotItinerarios />)}
                 </div>
             </div>

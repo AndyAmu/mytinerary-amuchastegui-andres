@@ -26,6 +26,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { TextField } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send'
+import commentsAcition from '../redux/actions/commentsActions'
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -52,6 +53,10 @@ function Itineraries(props) {
 
     const user = useSelector(store => store.userReducer.user)
 
+    const [text, setText] = useState('')
+
+
+
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -66,6 +71,18 @@ function Itineraries(props) {
         event.preventDefault();
         await dispatch(itinerariesActions.likeDislike(props.id))
         setReload(!reload)
+    }
+
+    const handleText = (event) => {
+        setText(event.target.value)
+
+        console.log(text)
+    }
+
+    const handleSend = () => {
+        dispatch(commentsAcition.addComment(text, props.id))
+            .then(props.getItineraries)
+            .catch(error => console.log(error))
     }
 
     return (
@@ -147,12 +164,19 @@ function Itineraries(props) {
                     <Box>
                         <Typography sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', color: 'black', fontSize: '1.4rem', marginBottom: '2rem' }}>Comment</Typography>
                     </Box>
+                    <Box>
+
+                    </Box>
                     <Box sx={{ marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '10rem' }}>
                         {props.user ?
                             <Avatar src={props.user.photoUser} sx={{ width: '40px', height: '40px', marginLeft: '2rem' }} /> :
                             <Avatar sx={{ width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src="/static/images/avatar/1.jpg" size="lg" />}
+                        {props.comments.map((item) =>{
+                            console.log(props.comments)
+                            return <Typography sx={{ color: 'black', fontSize: '1.4rem' }}>{item.comment}</Typography>
 
-                        <TextField sx={{ color: 'black', fontSize: '1.4rem' }}></TextField>
+                        })}
+                        
                         <Box sx={{ marginRight: '2rem' }}>
                             <Button sx={{ margin: '1rem' }} variant="outlined" color="success">
 
@@ -169,8 +193,8 @@ function Itineraries(props) {
                         {props.user ?
                             <Avatar src={props.user.photoUser} sx={{ width: '40px', height: '40px', marginLeft: '2rem' }} /> :
                             <Avatar sx={{ width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src="/static/images/avatar/1.jpg" size="lg" />}
-                        <TextField sx={{ color: 'black', fontSize: '1.4rem' }}></TextField>
-                        <Button sx={{marginRight: '2rem'}} variant="contained" endIcon={<SendIcon />}>
+                        <TextField onChange={(event) => handleText(event)} sx={{ color: 'black', fontSize: '1.4rem' }}></TextField>
+                        <Button sx={{ marginRight: '2rem' }} onClick={() => handleSend()} variant="contained" endIcon={<SendIcon />}>
                             Send
                         </Button>
                     </Box>

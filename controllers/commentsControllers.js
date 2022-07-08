@@ -2,7 +2,7 @@ const Itinerary = require("../models/itinerary");
 
 const commentsControllers = {
     addComment: async (req, res) => {
-        const { itineraryId, comment } = req.body.comment
+        const { itineraryId, comment } = req.body
         const user = req.user._id;
         //console.log(req.body)
         //console.log(comment)

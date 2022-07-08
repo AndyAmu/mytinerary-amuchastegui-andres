@@ -2,16 +2,17 @@ import axios from 'axios';
 
 const commentsActions = {
 
-    addComment: (comment) => {
+    addComment: (comment, itineraryId) => {
 
     const token = localStorage.getItem('token')
     return async (dispatch, getState) =>{
         if (comment.comment !== "") { // para que no comente vacio
-            const res = await axios.post('http://localhost:4000/api/itineraries/comment', {comment},{
+            const res = await axios.post('http://localhost:4000/api/itineraries/comment', {comment, itineraryId},{
                 headers: {
-                    'Authorization': `Beares ${token}`
+                    'Authorization': `Bearer ${token}`
                 }
             })
+            console.log(res)
             dispatch({
                 type: 'message',
                 payload: {

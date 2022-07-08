@@ -30,3 +30,9 @@
         width: 30vh;
     }
 }
+
+@media (max-width: 940px){
+    .comentarios {
+        width: 80ch!important;
+    }
+}

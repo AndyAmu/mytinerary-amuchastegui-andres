@@ -20,13 +20,8 @@ import itinerariesActions from '../redux/actions/itinerariesActions';
 import { useEffect } from 'react'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
-import Avatar from '@mui/material/Avatar';
-import FormControl from '@mui/material/FormControl';
-import OutlinedInput from '@mui/material/OutlinedInput';
-// import FormHelperText from '@mui/material/FormHelperText';
-import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
-import SendIcon from '@mui/icons-material/Send';
+import { connect } from 'react-redux'
+
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -41,7 +36,7 @@ const ExpandMore = styled((props) => {
 
 
 
-export default function Itineraries(props) {
+function Itineraries(props) {
 
     const [expanded, setExpanded] = React.useState(false);
 
@@ -143,28 +138,13 @@ export default function Itineraries(props) {
                                 <Typography variant='h3'>There are no itineraries at the moment</Typography>
                             </Box>}
                     </CardContent>
+
+
                     <Box>
                         <Typography sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', color: 'black', fontSize: '1.4rem', marginBottom: '2rem' }}>Comment</Typography>
                     </Box>
-                    <Box className='' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'white', color: 'black', fontSize: '1.4rem', margin: '2rem' }}>
-                        <Box>
-                            <Avatar sx={{ marginLeft: '2rem', marginRight: '3rem' }} alt="Remy Sharp" src="https://i1.sndcdn.com/avatars-0g1trKyC7MW1vTnr-wHt9NA-t240x240.jpg" />{/* Avatar perfil */}
-                        </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                            <FormControl sx={{ width: '35ch', margin: '1rem'}}>
-                                <OutlinedInput placeholder="Leave your comment" />
-
-                            </FormControl>
-                            <Button sx={{marginLeft: '2rem' }} variant="contained" endIcon={<SendIcon />}>
-                                Send
-                            </Button>
-                            <Button sx={{marginLeft: '2rem' }} variant="outlined" startIcon={<DeleteIcon />}>
-                                Delete
-                            </Button>
-                        </Box>
-                </Box>
                 </Collapse>
-                
+
             </Card>
 
         </Box>
@@ -172,3 +152,11 @@ export default function Itineraries(props) {
 
     );
 }
+
+const mapStateToProps = (state) => {
+    return {
+        user: state.userReducer.user,
+    }
+}
+
+export default connect(mapStateToProps, null)(Itineraries)

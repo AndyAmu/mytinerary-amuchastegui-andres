@@ -26,7 +26,7 @@ export default function ActionAreaCard() {
 
 
     const itinerary = useSelector(store => store.itinerariesReducer.getItinerariesFromCity)
-
+    console.log(itinerary)
     const card = useSelector(store => store.citiesReducer.oneCity)
 
     return (
@@ -72,6 +72,7 @@ export default function ActionAreaCard() {
                             activities={item.activities} 
                             activitiesId={item.activitiesId}
                             id={item._id}
+                            comments={item}
                             />) : (<NotItinerarios />)}
                 </div>
             </div>

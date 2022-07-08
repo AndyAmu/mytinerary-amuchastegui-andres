@@ -3,14 +3,14 @@ const cities = [
         "id": 1,
         "country": "Canada",
         "name": "Toronto",
-        "image": "https://wallpapercave.com/wp/wp6419835.jpg",
+        "image": "https://images6.alphacoders.com/911/thumb-1920-911616.jpg",
         "description": ""
     },
     {
         "id": 2,
         "country": "Mexico",
         "name": "Cancun",
-        "image": "https://www.safetourscozumel.com/images/blog/2021/11/islas-coralinas-isla-mujeres-parte-dos/isla-mujeres-arena-blanca-mar-diversion.jpg",
+        "image": "https://images.alphacoders.com/542/thumb-1920-542032.jpg",
         "description": ""
     },
     {
@@ -80,7 +80,7 @@ const cities = [
         "id": 12,
         "country": "Japan",
         "name": "Tokio",
-        "image": "https://img.besthqwallpapers.com/Uploads/13-10-2017/23947/tokyo-illumination-street-4k-skyscrapers.jpg",
+        "image": "https://fondosmil.com/fondo/12425.jpg",
         "description": ""
     }
 ]

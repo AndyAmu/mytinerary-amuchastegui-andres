@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/AndresAmu/mytinerary-amuchastegui-andres#readme",
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/joy": "^5.0.0-alpha.35",
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",

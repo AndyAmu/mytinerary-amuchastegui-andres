@@ -13,7 +13,6 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import '../components/Styles/Itineraries.css'
 import { Box } from '@mui/system';
 import Activities from './Activities'
-
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import itinerariesActions from '../redux/actions/itinerariesActions';
@@ -21,6 +20,10 @@ import { useEffect } from 'react'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 import { connect } from 'react-redux'
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 
 const ExpandMore = styled((props) => {
@@ -143,6 +146,24 @@ function Itineraries(props) {
                     <Box>
                         <Typography sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', color: 'black', fontSize: '1.4rem', marginBottom: '2rem' }}>Comment</Typography>
                     </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '10rem' }}>
+                        {props.user ?
+                            <Avatar src={props.user.photoUser} sx={{ width: '40px', height: '40px', marginLeft:'2rem' }} /> :
+                            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" size="lg" />}
+
+                        <Typography sx={{ color: 'black', fontSize: '1.4rem'}}>Comentario mandado</Typography>
+                        <Box sx={{marginRight: '2rem'}}>
+                        <Button sx={{margin: '1rem'}} variant="outlined" color="success">
+
+                            <EditIcon></EditIcon>
+                        </Button>
+                        <Button variant="outlined" color="error">
+                            <DeleteIcon />
+                        </Button>
+                        </Box>
+
+                    </Box>
+                    <Box>Aca poner elcomentario</Box>
                 </Collapse>
 
             </Card>

@@ -37,13 +37,13 @@ const commentsActions = {
     }
 },
 
-modifyComment: (comment) => {
+modifyComment: (comment, commentId) => {
 
         const token = localStorage.getItem('token')
         return async (dispatch, getState) =>{
-            const res = await axios.post('http://localhost:4000/api/itineraries/comment', {comment},{
+            const res = await axios.put('http://localhost:4000/api/itineraries/comment', {comment, commentId},{
                 headers: {
-                    'Authorization': `Beares ${token}`
+                    'Authorization': `Bearer ${token}`
                 }
             })
             dispatch({
@@ -63,9 +63,9 @@ modifyComment: (comment) => {
 
         const token = localStorage.getItem('token')
         return async (dispatch, getState) =>{
-            const res = await axios.post(`http://localhost:4000/api/itineraries/comment/${id}`, {}, { //Le paso datos por params(id) id del comentario que quiero elimiar
+            const res = await axios.post(`http://localhost:4000/api/itineraries/comment/${id}`, {}, { //Le paso datos por params(id) id del comentario que quiero eliminar
                 headers: {
-                    'Authorization': `Beares ${token}`
+                    'Authorization': `Bearer ${token}`
                 }
             })
             dispatch({

@@ -76,7 +76,7 @@ const commentsControllers = {
             console.log(error);
             res.json({
                 success: false,
-                message: "Something went wrong, try it again in some minutesAlgo ha salido mal intentalo en unos minutos",
+                message: "Something went wrong, try it again in some minutes",
             });
         }
     },

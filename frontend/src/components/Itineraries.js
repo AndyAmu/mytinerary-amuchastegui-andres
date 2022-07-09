@@ -8,7 +8,6 @@ import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-// import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import '../components/Styles/Itineraries.css'
 import { Box } from '@mui/system';
@@ -26,7 +25,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { TextField } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send'
-import commentsAcition from '../redux/actions/commentsActions'
+import commentAction from '../redux/actions/commentsActions'
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -76,13 +75,19 @@ function Itineraries(props) {
     const handleText = (event) => {
         setText(event.target.value)
 
-        console.log(text)
+        // console.log(text)
     }
 
     const handleSend = () => {
-        dispatch(commentsAcition.addComment(text, props.id))
+        dispatch(commentAction.addComment(text, props.id))
             .then(props.getItineraries)
             .catch(error => console.log(error))
+    }
+
+    const handleDelete = () => {
+        dispatch(commentAction.deleteComment(text, props.id))
+            .then(props.comments)
+            .cath(error => console.log(error))
     }
 
     return (
@@ -171,9 +176,9 @@ function Itineraries(props) {
                         {props.user ?
                             <Avatar src={props.user.photoUser} sx={{ width: '40px', height: '40px', marginLeft: '2rem' }} /> :
                             <Avatar sx={{ width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src="/static/images/avatar/1.jpg" size="lg" />}
-                        {props.comments.map((item) =>{
+                        {props.comments.map((item, index) =>{
                             console.log(props.comments)
-                            return <Typography sx={{ color: 'black', fontSize: '1.4rem' }}>{item.comment}</Typography>
+                            return <Typography key={index} sx={{ color: 'black', fontSize: '1.4rem' }}>{item.comment}</Typography>
 
                         })}
                         
@@ -183,7 +188,7 @@ function Itineraries(props) {
                                 <EditIcon></EditIcon>
                             </Button>
                             <Button variant="outlined" color="error">
-                                <DeleteIcon />
+                                <DeleteIcon onClick={() => handleDelete()} />
                             </Button>
                         </Box>
 

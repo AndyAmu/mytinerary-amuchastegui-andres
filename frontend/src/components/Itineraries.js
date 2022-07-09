@@ -74,6 +74,7 @@ function Itineraries(props) {
 
     const handleText = (event) => {
         setText(event.target.value)
+        // console.log(event)
 
         // console.log(text)
     }
@@ -82,12 +83,13 @@ function Itineraries(props) {
         dispatch(commentAction.addComment(text, props.id))
             .then(props.getItineraries)
             .catch(error => console.log(error))
+
     }
 
-    const handleDelete = () => {
-        dispatch(commentAction.deleteComment(text, props.id))
-            .then(props.comments)
-            .cath(error => console.log(error))
+    async function handleDelete (id) {
+        await dispatch(commentAction.deleteComment(id))
+            .then(commets => console.log(commets)) 
+        console.log(id)
     }
 
     return (
@@ -172,15 +174,17 @@ function Itineraries(props) {
                     <Box>
 
                     </Box>
-                    <Box sx={{ marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '10rem' }}>
+                    {props.comments.map((item, index) =>{
+                        return(
+                    <Box key= {index} sx={{ marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '10rem' }}>
                         {props.user ?
                             <Avatar src={props.user.photoUser} sx={{ width: '40px', height: '40px', marginLeft: '2rem' }} /> :
                             <Avatar sx={{ width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src="/static/images/avatar/1.jpg" size="lg" />}
-                        {props.comments.map((item, index) =>{
-                            console.log(props.comments)
-                            return <Typography key={index} sx={{ color: 'black', fontSize: '1.4rem' }}>{item.comment}</Typography>
+                        
+                            
+                            <Typography key={index} sx={{ color: 'black', fontSize: '1.4rem' }}>{item.comment}</Typography>
 
-                        })}
+                        
                         
                         <Box sx={{ marginRight: '2rem' }}>
                             <Button sx={{ margin: '1rem' }} variant="outlined" color="success">
@@ -188,11 +192,12 @@ function Itineraries(props) {
                                 <EditIcon></EditIcon>
                             </Button>
                             <Button variant="outlined" color="error">
-                                <DeleteIcon onClick={() => handleDelete()} />
+                                <DeleteIcon onClick={() => handleDelete(item._id)} />
                             </Button>
                         </Box>
 
-                    </Box>
+                    </Box>)
+                })}
 
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '10rem' }}>
                         {props.user ?

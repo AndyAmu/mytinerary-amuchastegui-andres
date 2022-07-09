@@ -192,17 +192,19 @@ function Itineraries(props) {
 
                     </Box>
                     {props.comments.map((item, index) => {
+                        console.log(item)
                         return (
-
+                            
                             <Box key={index} sx={{ borderRadius: '.5rem', margin: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '10rem' }}>
                                 {props.user ?
-                                    <Avatar src={props.user.photoUser} sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} /> :
+                                
+                                    <Avatar src={item.userId.photoUser} sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} /> :
                                     <Avatar sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src="/static/images/avatar/1.jpg" size="lg" />}
 
 
                                 <Typography onInput={(event) => setModify(event.currentTarget.textContent)} suppressContentEditableWarning={true} contentEditable key={index} sx={{ color: 'black', fontSize: '1.4rem' }}>{item.comment}</Typography>
 
-                                {props.user && props.user.id === item.userId ?
+                                {props.user && props.user.id === item.userId._id ?
 
                                     <Box sx={{ marginRight: '2rem' }}>
                                         <Button onClick={() => handleModify(item._id)} sx={{ margin: '1rem' }} variant="outlined" color="success">

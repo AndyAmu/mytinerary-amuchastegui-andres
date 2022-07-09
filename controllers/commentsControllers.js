@@ -12,7 +12,7 @@ const commentsControllers = {
                 { $push: { comments: { comment: comment, userId: user } } },
                 { new: true }
             )
-                .populate("comments.userId", { nameUser: 1, photoUser: 1 });
+                
             res.json({
                 success: true,
                 response: { newComment },

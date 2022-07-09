@@ -86,7 +86,7 @@ function Itineraries(props) {
 
     }
 
-    async function handleModify (event) {
+    async function handleModify(event) {
         const commentsMsj = {
             commentId: event,
             comment: modify
@@ -94,7 +94,7 @@ function Itineraries(props) {
         const res = await dispatch(commentAction.modifyComment(commentsMsj))
         setReload(!reload)
         console.log(res)
-            // .then(props.getItineraries)
+        // .then(props.getItineraries)
     }
 
 
@@ -194,12 +194,12 @@ function Itineraries(props) {
                     {props.comments.map((item, index) => {
                         console.log(item)
                         return (
-                            
+
                             <Box key={index} sx={{ borderRadius: '.5rem', margin: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '10rem' }}>
                                 {props.user ?
-                                
+
                                     <Avatar src={item.userId.photoUser} sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} /> :
-                                    <Avatar sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src="/static/images/avatar/1.jpg" size="lg" />}
+                                    <Avatar sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src={item.userId.photoUser} size="lg" />}
 
 
                                 <Typography onInput={(event) => setModify(event.currentTarget.textContent)} suppressContentEditableWarning={true} contentEditable key={index} sx={{ color: 'black', fontSize: '1.4rem' }}>{item.comment}</Typography>

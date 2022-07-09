@@ -41,7 +41,7 @@ export default function ActionAreaCard() {
                 <div key={card._id} className='details-contenedor'>
                     <Card key='index'>
                     
-                        <CardActionArea sx={{ backgroundColor: "#1b1919" }}>
+                        <CardActionArea sx={{backgroundColor: "#1b1919" }}>
                             <CardMedia
                                 className='card-details'
                                 component="img"

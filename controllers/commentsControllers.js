@@ -34,7 +34,7 @@ const commentsControllers = {
         try {
             const newComment = await Itinerary.findOneAndUpdate(
                 { "comments._id": req.params.id },
-                { $set: { "comments.$.comment": req.body.comment } },
+                { $set: { "comments.$.comment": comment } }, 
                 { new: true }
             );
             //console.log(newComment);

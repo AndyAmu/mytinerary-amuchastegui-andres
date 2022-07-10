@@ -61,7 +61,7 @@ const userActions = {
     },
 
     signOut: (userData) => {
-        console.log(userData)
+        // console.log(userData)
         // console.log('here userdata')
         return async (dispatch, getState) => {
             await axios.post('http://localhost:4000/api/auth/signOut', { userData })

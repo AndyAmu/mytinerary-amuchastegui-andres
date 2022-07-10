@@ -12,7 +12,6 @@ const commentsControllers = {
                 { $push: { comments: { comment: comment, userId: user } } },
                 { new: true }
             )
-                
             res.json({
                 success: true,
                 response: { newComment },

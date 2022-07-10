@@ -68,7 +68,7 @@ const NavBar = (props) => {
 
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ flexGrow: 6, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -112,9 +112,8 @@ const NavBar = (props) => {
                     <Typography
                         variant="h5"
                         sx={{
-                            mr: 5,
                             display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1.2,
+                            flexGrow: 6,
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',

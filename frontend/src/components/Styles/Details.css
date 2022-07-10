@@ -99,19 +99,30 @@
 
 .card-details {
     height: 30rem;
-    width: 90rem;
+    width: 100rem;
 }
 
 .img-activity {
     height: 12rem;
+    width: 28rem!important;
     object-fit: cover;
 }
 
-
+.card-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 @media (min-width: 941px) {
     .card-content{
         display: flex;
-        width: 70rem!important;
+        margin: 2rem;
+        
     }
 }
 
+@media (max-width: 540px){
+    .avatar{
+        margin-top: 2rem;
+    }
+}

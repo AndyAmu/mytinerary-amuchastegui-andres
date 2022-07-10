@@ -23,7 +23,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import { TextField } from '@mui/material';
+import CustomInput from '@mui/base/InputUnstyled';
 import SendIcon from '@mui/icons-material/Send'
 import commentAction from '../redux/actions/commentsActions'
 
@@ -98,16 +98,11 @@ function Itineraries(props) {
     }
 
 
-
     async function handleDelete(id) {
         await dispatch(commentAction.deleteComment(id))
             .then(props.getItineraries)
         console.log(id)
     }
-
-
-
-
 
     return (
         <Box>
@@ -186,7 +181,7 @@ function Itineraries(props) {
 
 
                     <Box>
-                        <Typography sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', color: 'black', fontSize: '1.4rem', marginBottom: '2rem' }}>Comment</Typography>
+                        <Typography sx={{ borderRadius: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', color: 'black', fontSize: '1.4rem', marginBottom: '2rem' }}>Comment</Typography>
                     </Box>
                     <Box>
 
@@ -195,35 +190,49 @@ function Itineraries(props) {
                         console.log(item)
                         return (
 
-                            <Box key={index} sx={{ borderRadius: '.5rem', margin: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '10rem' }}>
-                                {props.user ?
+                            <Box key={index} sx={{ borderRadius: '.3rem', margin: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '10rem' }}>
+                                <Box sx={{margin:'1rem', color: 'white', borderRadius: '2rem', margin: '1rem', backgroundColor: '#1b1919', marginRight: '1rem', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                                    {props.user ?
 
-                                    <Avatar src={item.userId.photoUser} sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} /> :
-                                    <Avatar sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src={item.userId.photoUser} size="lg" />}
+                                        <Avatar src={item.userId.photoUser} sx={{margin:'1rem', marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} /> :
+                                        <Avatar sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src={item.userId.photoUser} size="lg" />}
 
+                                    <Typography><b>{item.userId.nameUser}</b></Typography>
+                                </Box>
 
-                                <Typography onInput={(event) => setModify(event.currentTarget.textContent)} suppressContentEditableWarning={true} contentEditable key={index} sx={{ color: 'black', fontSize: '1.4rem' }}>{item.comment}</Typography>
+                                <Typography onInput={(event) => setModify(event.currentTarget.textContent)} suppressContentEditableWarning={true} contentEditable key={index} sx={{ color: 'black', fontSize: '1.4rem', marginRight: '1rem' }}>{item.comment}</Typography>
 
                                 {props.user && props.user.id === item.userId._id ?
 
+
                                     <Box sx={{ marginRight: '2rem' }}>
+
                                         <Button onClick={() => handleModify(item._id)} sx={{ margin: '1rem' }} variant="outlined" color="success">
                                             <EditIcon />
                                         </Button>
-                                        <Button onClick={() => handleDelete(item._id)} variant="outlined" color="error">
+                                        <Button onClick={() => handleDelete(item._id)} sx={{ margin: '1rem' }} variant="outlined" color="error">
                                             <DeleteIcon />
                                         </Button>
-                                    </Box> : <Box></Box>}
+                                    </Box> : <Box>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</Box>}
 
                             </Box>)
                     })}
 
-                    <Box sx={{ margin: '1rem', borderRadius: '.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '10rem' }}>
-                        {props.user ?
-                            <Avatar src={props.user.photoUser} sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem', }} /> :
-                            <Avatar sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src="/static/images/avatar/1.jpg" size="lg" />}
-                        <TextField onChange={(event) => handleText(event)} sx={{ color: 'black', fontSize: '1.4rem' }}></TextField>
-                        <Button sx={{ marginRight: '2rem' }} onClick={() => handleSend()} variant="contained" endIcon={<SendIcon />}>
+                    <Box className="panel-comment" sx={{ margin: '2rem', borderRadius: '.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '15rem' }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                            {props.user ?
+                                <Avatar className='avatar' src={props.user.photoUser} sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem', }} /> :
+                                <Avatar sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src="https://icon-library.com/images/log-in-icon/log-in-icon-15.jpg" size="lg" />}
+
+                            {props.user ?
+                                <p><b>{props.user.nameUser}</b></p> :
+                                <p></p>
+                            }
+                        </Box>
+
+                        <CustomInput onChange={(event) => handleText(event)} multiline placeholder="Write a comment..." />
+
+                        <Button className='sendIcon' sx={{ marginRight: '2rem', marginLefet: '2rem' }} onClick={() => handleSend()} variant="contained" endIcon={<SendIcon />}>
                             Send
                         </Button>
                     </Box>

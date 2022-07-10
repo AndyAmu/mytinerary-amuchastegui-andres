@@ -123,7 +123,7 @@ function Itineraries(props) {
 
                     <Typography sx={{ fontSize: '1rem', color: "white", textAlign: "center" }} variant="body2" color="text.secondary">
 
-                        {props.price}ㅤㅤㅤㅤㅤㅤ
+                        {props.price}ㅤㅤ
 
                         {props.hours}
 

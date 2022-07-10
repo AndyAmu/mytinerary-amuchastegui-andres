@@ -93,7 +93,7 @@ function Itineraries(props) {
         }
         const res = await dispatch(commentAction.modifyComment(commentsMsj))
         setReload(!reload)
-        console.log(res)
+        // console.log(res)
         // .then(props.getItineraries)
     }
 
@@ -101,7 +101,7 @@ function Itineraries(props) {
     async function handleDelete(id) {
         await dispatch(commentAction.deleteComment(id))
             .then(props.getItineraries)
-        console.log(id)
+        // console.log(id)
     }
 
     return (
@@ -187,7 +187,7 @@ function Itineraries(props) {
 
                     </Box>
                     {props.comments.map((item, index) => {
-                        console.log(item)
+                        // console.log(item)
                         return (
 
                             <Box key={index} sx={{ borderRadius: '.3rem', margin: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '10rem' }}>

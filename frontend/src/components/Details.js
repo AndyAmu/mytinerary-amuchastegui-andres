@@ -26,7 +26,7 @@ export default function ActionAreaCard() {
 
 
     const itinerary = useSelector(store => store.itinerariesReducer.getItinerariesFromCity)
-    console.log(itinerary)
+    // console.log(itinerary)
     const card = useSelector(store => store.citiesReducer.oneCity)
 
     function getItineraries() {

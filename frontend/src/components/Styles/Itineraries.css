@@ -38,8 +38,29 @@
 }
 @media (max-width: 580px){
     .sendIcon {
-        margin-left: 2rem!important;
-        margin-right: 2rem!important;
+        margin-left: 6rem!important;
+        margin-top: .5rem!important;
         margin-bottom: 2rem!important;
     }
+}
+
+.MuiInput-input {
+    width: 38rem;
+}
+@media (max-width: 775px){
+    .MuiInput-input{
+        width: 18rem;
+    }
+}
+
+
+@media (min-width: 580px){
+    .comment-send {
+        display: flex;
+    justify-content: center;
+    }
+}
+
+.comment-send {
+    align-items: center;
 }

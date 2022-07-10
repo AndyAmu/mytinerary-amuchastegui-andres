@@ -191,10 +191,10 @@ function Itineraries(props) {
                         return (
 
                             <Box key={index} sx={{ borderRadius: '.3rem', margin: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '10rem' }}>
-                                <Box sx={{margin:'1rem', color: 'white', borderRadius: '2rem', margin: '1rem', backgroundColor: '#1b1919', marginRight: '1rem', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                                <Box sx={{ margin: '1rem', color: 'white', borderRadius: '2rem', margin: '1rem', backgroundColor: '#1b1919', marginRight: '1rem', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                                     {props.user ?
 
-                                        <Avatar src={item.userId.photoUser} sx={{margin:'1rem', marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} /> :
+                                        <Avatar src={item.userId.photoUser} sx={{ margin: '1rem', marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} /> :
                                         <Avatar sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src={item.userId.photoUser} size="lg" />}
 
                                     <Typography><b>{item.userId.nameUser}</b></Typography>
@@ -218,23 +218,27 @@ function Itineraries(props) {
                             </Box>)
                     })}
 
-                    <Box className="panel-comment" sx={{ margin: '2rem', borderRadius: '.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '15rem' }}>
+                    <Box className="panel-comment" sx={{ margin: '2rem', borderRadius: '.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '15rem' }}>
                         <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                             {props.user ?
-                                <Avatar className='avatar' src={props.user.photoUser} sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem', }} /> :
+                                <Avatar className='avatar' src={props.user.photoUser} sx={{marginTop:'1rem', marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem', }} /> :
                                 <Avatar sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src="https://icon-library.com/images/log-in-icon/log-in-icon-15.jpg" size="lg" />}
 
                             {props.user ?
                                 <p><b>{props.user.nameUser}</b></p> :
-                                <p></p>
+                                <p><b>Login to comment</b></p>
                             }
                         </Box>
-
+                        
+                            {props.user ?
+                            <Box className='comment-send'>
                         <CustomInput onChange={(event) => handleText(event)} multiline placeholder="Write a comment..." />
 
-                        <Button className='sendIcon' sx={{ marginRight: '2rem', marginLefet: '2rem' }} onClick={() => handleSend()} variant="contained" endIcon={<SendIcon />}>
+                        <Button className='sendIcon' sx={{ marginLeft: '2rem' }} onClick={() => handleSend()} variant="contained" endIcon={<SendIcon />}>
                             Send
-                        </Button>
+                        </Button> </Box> : <p></p>
+                        
+                        }
                     </Box>
                 </Collapse>
 

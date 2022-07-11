@@ -48,6 +48,7 @@ function Itineraries(props) {
         setExpanded(!expanded);
     };
     const [reload, setReload] = useState(false)
+
     const [likes, setLikes] = useState(props.likes)
 
     const user = useSelector(store => store.userReducer.user)
@@ -67,9 +68,9 @@ function Itineraries(props) {
     // console.log(props)
 
     const like = async (event) => {
-        event.preventDefault();
+        event.preventDefault(); // cancela el evento, 
         await dispatch(itinerariesActions.likeDislike(props.id))
-        setReload(!reload)
+        setReload(!reload)// actualiza esa funcion en pantalla
     }
 
     const handleText = (event) => {
@@ -91,10 +92,12 @@ function Itineraries(props) {
             commentId: event,
             comment: modify
         }
+        // eslint-disable-next-line
         const res = await dispatch(commentAction.modifyComment(commentsMsj))
         setReload(!reload)
+        
         // console.log(res)
-        // .then(props.getItineraries)
+        
     }
 
 
@@ -181,39 +184,37 @@ function Itineraries(props) {
 
 
                     <Box>
-                        <Typography sx={{ borderRadius: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', color: 'black', fontSize: '1.4rem', marginBottom: '2rem' }}>Comment</Typography>
+                        <Typography sx={{ borderRadius: '1rem', textAlign:'center', backgroundColor: 'white', color: 'black', fontSize: '1.4rem', marginBottom: '2rem' }}>Comment</Typography>
                     </Box>
-                    <Box>
-
-                    </Box>
+                    
                     {props.comments.map((item, index) => {
                         // console.log(item)
                         return (
 
-                            <Box key={index} sx={{ borderRadius: '.3rem', margin: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '10rem' }}>
-                                <Box sx={{ margin: '1rem', color: 'white', borderRadius: '2rem', margin: '1rem', backgroundColor: '#1b1919', marginRight: '1rem', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+                            <Box className="comments-users" key={index} sx={{borderRadius: '.3rem', margin: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '9rem' }}>
+                                <Box sx={{margin: '1rem', color: 'black', borderRadius: '2rem',  display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                                     {props.user ?
 
-                                        <Avatar src={item.userId.photoUser} sx={{ margin: '1rem', marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} /> :
+                                        <Avatar src={item.userId.photoUser} sx={{ margin: '.1rem', marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} /> :
                                         <Avatar sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src={item.userId.photoUser} size="lg" />}
 
-                                    <Typography><b>{item.userId.nameUser}</b></Typography>
+                                    <Typography ><b>{item.userId.nameUser}</b></Typography>
                                 </Box>
 
-                                <Typography onInput={(event) => setModify(event.currentTarget.textContent)} suppressContentEditableWarning={true} contentEditable key={index} sx={{ color: 'black', fontSize: '1.4rem', marginRight: '1rem' }}>{item.comment}</Typography>
+                                <Typography className='typography-comment' onInput={(event) => setModify(event.currentTarget.textContent)} suppressContentEditableWarning={true} contentEditable key={index} sx={{ color: 'black', fontSize: '1.2rem' }}>{item.comment}</Typography>
 
                                 {props.user && props.user.id === item.userId._id ?
 
 
                                     <Box sx={{ marginRight: '2rem' }}>
 
-                                        <Button onClick={() => handleModify(item._id)} sx={{ margin: '1rem' }} variant="outlined" color="success">
-                                            <EditIcon />
+                                        <Button className='buttom-comment' onClick={() => handleModify(item._id)} sx={{ margin: '.2rem' }} variant="outlined" color="success">
+                                            <EditIcon className='buttom-comment' />
                                         </Button>
-                                        <Button onClick={() => handleDelete(item._id)} sx={{ margin: '1rem' }} variant="outlined" color="error">
-                                            <DeleteIcon />
+                                        <Button className='buttom-comment' onClick={() => handleDelete(item._id)} sx={{ margin: '.2rem' }} variant="outlined" color="error">
+                                            <DeleteIcon className='buttom-comment' />
                                         </Button>
-                                    </Box> : <Box>ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</Box>}
+                                    </Box> : <Box>ㅤㅤㅤㅤㅤㅤㅤ</Box>}
 
                             </Box>)
                     })}
@@ -221,7 +222,7 @@ function Itineraries(props) {
                     <Box className="panel-comment" sx={{ margin: '2rem', borderRadius: '.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', color: 'black', height: '15rem' }}>
                         <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
                             {props.user ?
-                                <Avatar className='avatar' src={props.user.photoUser} sx={{marginTop:'1rem', marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem', }} /> :
+                                <Avatar className='avatar' src={props.user.photoUser} sx={{ marginTop: '1rem', marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem', }} /> :
                                 <Avatar sx={{ marginRight: '2rem', width: '40px', height: '40px', marginLeft: '2rem' }} alt="Remy Sharp" src="https://icon-library.com/images/log-in-icon/log-in-icon-15.jpg" size="lg" />}
 
                             {props.user ?
@@ -229,15 +230,15 @@ function Itineraries(props) {
                                 <p><b>Login to comment</b></p>
                             }
                         </Box>
-                        
-                            {props.user ?
-                            <Box className='comment-send'>
-                        <CustomInput onChange={(event) => handleText(event)} multiline placeholder="Write a comment..." />
 
-                        <Button className='sendIcon' sx={{ marginLeft: '2rem' }} onClick={() => handleSend()} variant="contained" endIcon={<SendIcon />}>
-                            Send
-                        </Button> </Box> : <p></p>
-                        
+                        {props.user ?
+                            <Box className='comment-send'>
+                                <CustomInput onChange={(event) => handleText(event)} multiline placeholder="Write a comment..." />
+
+                                <Button className='sendIcon' sx={{ marginLeft: '2rem' }} onClick={() => handleSend()} variant="contained" endIcon={<SendIcon />}>
+                                    Send
+                                </Button> </Box> : <p></p>
+
                         }
                     </Box>
                 </Collapse>

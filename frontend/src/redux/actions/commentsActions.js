@@ -8,12 +8,12 @@ const commentsActions = {
     return async (dispatch, getState) =>{
         if (comment.comment !== "") { // para que no comente vacio
             const res = await axios.post('http://localhost:4000/api/itineraries/comment', {comment, itineraryId},{
-                headers: {
-                    'Authorization': `Bearer ${token}`
+                headers: { // cabecera
+                    'Authorization': `Bearer ${token}` // permite la autorización en conjunto con la autenticación de usuarios
                 }
             })
             // console.log(res)
-            dispatch({
+            dispatch({ // Despacha
                 type: 'message',
                 payload: {
                     view: true,

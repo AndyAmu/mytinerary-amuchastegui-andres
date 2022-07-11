@@ -8,11 +8,7 @@
 }
 
 
-@media (max-width: 940px){
-    .card-itineraries {
-        width: 80vw;
-    }
-}
+
 
 @media (max-width: 775px){
     .card-itineraries {
@@ -63,4 +59,35 @@
 
 .comment-send {
     align-items: center;
+}
+
+@media (max-width: 775px){
+    .typography-comment{
+        font-size: 1rem!important;
+        
+    }
+}
+
+
+@media (max-width: 775px){
+    .buttom-comment{
+        width: 1.2rem!important;
+        
+        
+    }
+}
+
+
+@media (max-width: 580px) {
+    .comments-users{
+        
+        text-align: center;
+        height: 15rem!important;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.css-1dwbrks{
+    margin-right: 0rem!important;
 }

@@ -7,7 +7,7 @@ const commentsActions = {
     const token = localStorage.getItem('token')
     return async (dispatch, getState) =>{
         if (comment.comment !== "") { // para que no comente vacio
-            const res = await axios.post('http://localhost:4000/api/itineraries/comment', {comment, itineraryId},{
+            const res = await axios.post('https://my-tinerary-and-amu-back.herokuapp.com/api/itineraries/comment', {comment, itineraryId},{
                 headers: { // cabecera
                     'Authorization': `Bearer ${token}` // permite la autorización en conjunto con la autenticación de usuarios
                 }
@@ -42,7 +42,7 @@ modifyComment: (commentsMsj) => {
         const token = localStorage.getItem('token')
         // console.log(comment)
         return async (dispatch, getState) =>{
-            const res = await axios.put(`http://localhost:4000/api/itineraries/comment/${commentId}`, {comment},{
+            const res = await axios.put(`https://my-tinerary-and-amu-back.herokuapp.com/api/itineraries/comment/${commentId}`, {comment},{
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -64,7 +64,7 @@ modifyComment: (commentsMsj) => {
 
         const token = localStorage.getItem('token')
         return async (dispatch, getState) =>{
-            const res = await axios.post(`http://localhost:4000/api/itineraries/comment/${id}`, {}, { //Le paso datos por params(id) id del comentario que quiero eliminar
+            const res = await axios.post(`https://my-tinerary-and-amu-back.herokuapp.com/api/itineraries/comment/${id}`, {}, { //Le paso datos por params(id) id del comentario que quiero eliminar
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

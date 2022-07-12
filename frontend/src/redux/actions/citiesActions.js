@@ -3,14 +3,14 @@ import axios from 'axios'
 const citiesActions = {
     getCities:() => {
         return async(dispatch, getstate) => {
-            const res = await axios.get('http://localhost:4000/api/cities')
+            const res = await axios.get('https://my-tinerary-and-amu-back.herokuapp.com/api/cities')
             dispatch({type: 'GETCITIES', payload:res.data.response.cities})
         }
     },
     getOneCity: (id) => {
         return async(dispatch,getstate) => {
             // eslint-disable-next-line
-            const res = await axios. get(`http://localhost:4000/api/cities/${id}`)
+            const res = await axios. get(`https://my-tinerary-and-amu-back.herokuapp.com/api/cities/${id}`)
             dispatch ({type: 'GET_ONE_CITY', payload:res.data.response.city})
         }
     },

@@ -7,7 +7,7 @@ const userActions = {
     signUp: (userData) => {
         return async (dispatch, getState) => {
             try {
-                const res = await axios.post('http://localhost:4000/api/auth/signUp', { userData })
+                const res = await axios.post('https://my-tinerary-and-amu-back.herokuapp.com/api/auth/signUp', { userData })
                 // console.log(userData)
                 // console.log(res)
                 dispatch({
@@ -30,7 +30,7 @@ const userActions = {
         //console.log(userLogin)
         return async (dispatch, getState) => {
 
-            const res = await axios.post('http://localhost:4000/api/auth/signIn', { logedData })
+            const res = await axios.post('https://my-tinerary-and-amu-back.herokuapp.com/api/auth/signIn', { logedData })
             // console.log(res)
 
             if (res.data.success) { // Si la respuesta es exitosa
@@ -64,7 +64,7 @@ const userActions = {
         // console.log(userData)
         // console.log('here userdata')
         return async (dispatch, getState) => {
-            await axios.post('http://localhost:4000/api/auth/signOut', { userData })
+            await axios.post('https://my-tinerary-and-amu-back.herokuapp.com/api/auth/signOut', { userData })
             localStorage.removeItem('token')
 
             dispatch({
@@ -76,7 +76,7 @@ const userActions = {
     verificationToken: (token) => {
         return async (dispatch, getState) => {
             //console.log(token)
-            const user = await axios.get('http://localhost:4000/api/auth/loginToken', {headers: {'Authorization': 'Bearer '+token}} ) // LE paso las cabeceras de la llamada a axios bajo la propiedad de “Authorizations” : “Bearer “ Bearer es un método estándar que nos permite realizar autenticación y autorización de usuarios,
+            const user = await axios.get('https://my-tinerary-and-amu-back.herokuapp.com/api/auth/loginToken', {headers: {'Authorization': 'Bearer '+token}} ) // LE paso las cabeceras de la llamada a axios bajo la propiedad de “Authorizations” : “Bearer “ Bearer es un método estándar que nos permite realizar autenticación y autorización de usuarios,
             //console.log(userData)
             if (user.data.success) {
                 dispatch({

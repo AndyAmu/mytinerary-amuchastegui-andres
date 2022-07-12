@@ -5,7 +5,7 @@ const itinerariesActions = {
 
     getItineraries: () => {
         return async (dispatch, getState) => {
-            const res = await axios.get("http://localhost:4000/api/itineraries%22")
+            const res = await axios.get("https://my-tinerary-and-amu-back.herokuapp.com/api/itineraries%22")
         // console.log(res)
         dispatch({ type: "GETITINERARIES", payload: res.data.response.itineraries })
 
@@ -15,7 +15,7 @@ const itinerariesActions = {
 
     getOneItinerary: (id) => {
         return async (dispatch, getState) => {
-            const res = await axios.get(`http://localhost:4000/api/itinerary/${id}`)
+            const res = await axios.get(`https://my-tinerary-and-amu-back.herokuapp.com/api/itinerary/${id}`)
                 // console.log(res)
                 return res.data.response.itinerary
         // dispatch({ type: 'GETONEITINERARY', payload: res.data.response.itinerary })
@@ -24,7 +24,7 @@ const itinerariesActions = {
 
     getItinerariesByCity: (id) => {
         return async (dispatch, getState) => {
-            const res = await axios.get(`http://localhost:4000/api/ItinerariesByCity/${id}`)
+            const res = await axios.get(`https://my-tinerary-and-amu-back.herokuapp.com/api/ItinerariesByCity/${id}`)
             // console.log(res)
         dispatch({ type: 'GETITINERARIESBYCITY', payload: res.data.response })
     }
@@ -35,7 +35,7 @@ const itinerariesActions = {
         //console.log(token)
         return async () => {
             try {
-                let response = await axios.put(`http://localhost:4000/api/like/${id}`, {}, // ponemos un objeto vacio para pasarlo como primer parametro
+                let response = await axios.put(`https://my-tinerary-and-amu-back.herokuapp.com/api/like/${id}`, {}, // ponemos un objeto vacio para pasarlo como primer parametro
                 {headers: {
                     Authorization: 'Bearer '+token
                     }

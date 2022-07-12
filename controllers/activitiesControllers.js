@@ -1,4 +1,4 @@
-const Activity = require('../models/activity')
+const Activity = require('../modelos/activity')
 
 
 const activitiesControllers={

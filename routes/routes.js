@@ -2,7 +2,7 @@ const Router = require('express').Router();
 
 const {getCities, getOneCity, addCity, modifyCity,multiplesCities, removeCity} = require('../controllers/citiesControllers');
 
-const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItinerary, getItinerariesByCity, likeDislike} = require('../controllers/itineraryControllers')// Itinerary controllers
+const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItinerary, getItinerariesByCity, likeDislike} = require('../controllers/itineraryControllers')
 
 const {signInUser,singUpUsers, signOut,verifyEmail,verificationToken} = require('../controllers/userControllers')//UserControllers
 

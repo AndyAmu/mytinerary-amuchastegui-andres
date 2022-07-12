@@ -1,4 +1,4 @@
-const Itinerary = require('../models/itinerary');
+const Itinerary = require('../modelos/itinerary');
 
 const commentsControllers = {
     addComment: async (req, res) => {

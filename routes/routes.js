@@ -6,9 +6,9 @@ const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeIti
 
 const {signInUser,singUpUsers, signOut,verifyEmail,verificationToken} = require('../controllers/userControllers')//UserControllers
 
-const validator = require('../config/validator')// Validator
+const validator = require('../configuracion/validator')// Validator
 
-const passport = require('../config/passport')
+const passport = require('../configuracion/passport')
 
 const{getActivities,addActivity,removeActivity,modifyActivity,getOneActivity,multiplesActivities,getActivitiesByitinerary} = require('../controllers/activitiesControllers');
 

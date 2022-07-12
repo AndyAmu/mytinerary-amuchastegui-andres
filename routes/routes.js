@@ -1,14 +1,16 @@
-const Router = require('express').Router();
+const Router = require('express').Router()
 
 const validator = require('../config/validator')// Validator
 
 const passport = require('../config/passport')
 
+const {signInUser,singUpUsers, signOut,verifyEmail,verificationToken} = require('../controllers/userControllers')//UserControllers
+
 const {getCities, getOneCity, addCity, modifyCity,multiplesCities, removeCity} = require('../controllers/citiesControllers');
 
 const {getItineraries, getOneItinerary, addItinerary, modifyItinerary, removeItinerary, multiplesItinerary, getItinerariesByCity, likeDislike} = require('../controllers/itineraryControllers')// Itinerary controllers
 
-const {signInUser,singUpUsers, signOut,verifyEmail,verificationToken} = require('../controllers/userControllers')//UserControllers
+
 
 
 
